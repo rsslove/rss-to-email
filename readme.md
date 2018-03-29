@@ -15,7 +15,7 @@
 
  ```
 
-[![rss-to-email example](http://g.recordit.co/tIa8cImPWS.gif)](rss-to-email video)
+[![rss-to-email example](http://g.recordit.co/tIa8cImPWS.gif)](http://recordit.co/tIa8cImPWS)
 
 ## Table of Contents
 
