@@ -4,7 +4,7 @@ const template = compile(`
       <mj-section>
         <mj-column>
           <mj-text>{outro}</mj-text>
-          <mj-text padding-bottom="20">{salutation}</mj-text>
+          <mj-text padding-bottom="20">{signature}</mj-text>
         </mj-column>
       </mj-section>
 `);
