@@ -1,0 +1,9 @@
+{
+  "name": "rss-to-email",
+  "version": "0.0.1",
+  "dependencies": {
+    "mjml": "^3.3.5",
+    "rss-parser": "^3.1.2",
+    "string-template": "^1.0.0"
+  }
+}

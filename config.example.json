@@ -1,0 +1,17 @@
+{
+  "feedUrl": "http://www.example.com/rss",
+  "header": {
+    "title": "Example Header",
+    "banner": "http://www.example.com/image.png",
+    "link": "http://www.example.com/"
+  },
+  "accentColor": "red",
+  "greeting": "Hey there,",
+  "intro": "Thanks for opening the email! Here are some links I want you to check out:",
+  "outro": "Thanks for reading. We'll be back next week with more!",
+  "salutation": "John Smith, CMO at Example Co.",
+  "output": {
+    "filename": "example",
+    "types": ["html", "mjml"]
+  }
+}

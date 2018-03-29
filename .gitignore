@@ -1,0 +1,9 @@
+*.log
+npm-debug.log*
+node_modules/
+
+config.*.json
+config.json
+!config.example.json
+output/*
+!.gitkeep
