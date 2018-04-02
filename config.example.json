@@ -1,6 +1,6 @@
 {
   "accentColor": "red",
-  "feedUrl": "http://www.example.com/rss",
+  "feedUrl": "http://www.feedforall.com/sample.xml",
   "greeting": "Hey there,",
   "header": {
     "banner": "http://www.example.com/image.png",

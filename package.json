@@ -1,11 +1,18 @@
 {
   "name": "rss-to-email",
   "scripts": {
-    "start": "node index.js config.js"
+    "start": "node index.js config.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
+    "file-exists": "^5.0.1",
+    "is-valid-json": "^1.0.2",
     "mjml": "^3.3.5",
     "rss-parser": "^3.1.2",
     "string-template": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
   }
 }
