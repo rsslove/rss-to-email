@@ -1,7 +1,7 @@
 {
   "name": "rss-to-email",
   "scripts": {
-    "start": "node index.js config.js",
+    "cli": "node cli.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },

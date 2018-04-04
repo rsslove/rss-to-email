@@ -13,7 +13,7 @@ const withoutBanner = `
       <!-- Header -->
       <mj-section>
         <mj-column>
-          <mj-link href="{link}" color="{accentColor}" padding="30 0 40" align="center" font-size="24">{title}</mj-link>
+          <mj-link href="{link}" color="{accentColor}" padding="30 0 40" align="center" font-size="24px">{title}</mj-link>
         </mj-column>
       </mj-section>
 `;

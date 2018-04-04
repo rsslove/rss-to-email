@@ -2,7 +2,9 @@ const fe = require('file-exists');
 const fs = require('fs');
 const isJson = require('is-valid-json');
 const path = require('path');
+
 const DEFAULT_CONFIG_FILEPATH = path.join(__dirname, '..', 'config.example.json');
+const DEFAULT_CONFIG_WARNING_MESSAGE = 'No configuration file or object included. Defaults will be used.';
 
 function isFilepathString(input) {
   return typeof input === 'string' && fe.sync(input);
@@ -16,36 +18,44 @@ function isConfigObject(input) {
   return typeof input === 'object' && input.feedUrl;
 }
 
-const Config = function (input) {
-  this.configObject = {};
+function merge(config1, config2) {
+  return Object.assign(config1, config2);
+}
 
-  this.setConfiguration = function (input) {
+class Config {
+
+  constructor(input) {
+    let config;
+
     if (isFilepathString(input)) {
-      this.setConfigFromFile(input);
+      config = Config.getFromFile(input);
     } else if (isJsonString(input)) {
-      this.setConfigFromObject(JSON.parse(input));
+      config = Config.getFromJson(input);
     } else if (isConfigObject(input)) {
-      this.setConfigFromObject(input);
+      config = Config.getFromObject(input);
     } else {
-      // Show warning and use defaults
-      console.warn('No configuration file or object included. Defaults will be used.');
-      this.setConfigFromFile(DEFAULT_CONFIG_FILEPATH);
+      console.warn(DEFAULT_CONFIG_WARNING_MESSAGE);
+      config = Config.getDefault();
     }
+
+    return config;
+  }
+
+  static getDefault() {
+    return JSON.parse(fs.readFileSync(DEFAULT_CONFIG_FILEPATH));
+  }
+
+  static getFromJson(input) {
+    return merge(Config.getDefault(), Config.getFromObject(JSON.parse(input)));
   };
 
-  this.setConfigFromFile = function (input) {
-    this.configObject = JSON.parse(fs.readFileSync(input));
+  static getFromFile(input) {
+    return merge(Config.getDefault(), JSON.parse(fs.readFileSync(input)));
   };
 
-  this.setConfigFromObject = function (input) {
-    this.configObject = Object.assign(input);
+  static getFromObject(input) {
+    return merge(Config.getDefault(), Object.assign(input));
   };
-
-  this.getConfiguration = function () {
-    return this.configObject;
-  };
-
-  this.setConfiguration(input);
-};
+}
 
 module.exports = Config;
