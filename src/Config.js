@@ -15,7 +15,7 @@ function isJsonString(input) {
 }
 
 function isConfigObject(input) {
-  return typeof input === 'object' && input.feedUrl;
+  return typeof input === 'object';
 }
 
 function merge(config1, config2) {
@@ -54,7 +54,7 @@ class Config {
   };
 
   static getFromObject(input) {
-    return merge(Config.getDefault(), Object.assign(input));
+    return merge(Config.getDefault(), input);
   };
 }
 

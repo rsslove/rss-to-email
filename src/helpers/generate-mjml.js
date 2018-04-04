@@ -8,26 +8,26 @@ const cleanItem = require('./clean-item');
 
 function generateMjmlFromItems(items, config) {
   // Initialize with head
-  let html = initializeTemplate(config);
+  let mjml = initializeTemplate(config);
 
   // Add header
-  html += header(config);
+  mjml += header(config);
 
   // Add intro
-  html += intro(config);
+  mjml += intro(config);
 
   // Add items
   if (items) {
-    items.forEach(item => html += entryTemplate(cleanItem(item)));
+    items.forEach(item => mjml += entryTemplate(cleanItem(item)));
   }
 
   // Add outro
-  html += outro(config);
+  mjml += outro(config);
 
   // Close template
-  html += closeTemplate(config);
+  mjml += closeTemplate(config);
 
-  return html;
+  return mjml;
 }
 
 module.exports = generateMjmlFromItems;

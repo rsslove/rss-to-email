@@ -3,7 +3,7 @@
   "scripts": {
     "cli": "node cli.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "file-exists": "^5.0.1",

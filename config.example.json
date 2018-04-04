@@ -1,6 +1,17 @@
 {
   "accentColor": "red",
-  "feedUrl": "http://www.feedforall.com/sample.xml",
+  "feeds": [
+    {
+      "description": "A short custom feed description",
+      "title": "A custom feed title",
+      "url": "http://www.feedforall.com/sample.xml"
+    },
+    {
+      "description": "A short custom feed description",
+      "title": "A custom feed title",
+      "url": "http://www.feedforall.com/sample.xml"
+    }
+  ],
   "greeting": "Hey there,",
   "header": {
     "banner": "http://www.example.com/image.png",
@@ -10,7 +21,7 @@
   "intro": "Thanks for opening the email! Here are some links I want you to check out:",
   "output": {
     "filename": "example",
-    "types": [
+    "formats": [
       "html",
       "mjml"
     ]

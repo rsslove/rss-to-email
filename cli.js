@@ -2,25 +2,29 @@
  * Entrypoint for CLI applications
  */
 const Config = require('./src/Config');
-const generateMjmlFromItems = require('./src/helpers/generate-mjml');
-const getFeedItems = require('./src/helpers/get-feed-items');
-const saveFiles = require('./src/helpers/save-files');
+const Feed = require('./src/Feed');
+const Email = require('./src/Email');
 
-function loadConfig() {
-  try {
-    const args = process.argv.slice(2);
-    return new Config(args[0] || 'config.example.json');
-  } catch (e) {
-    console.error(e);
-  }
-}
+async function init(Config, Feed, Email) {
+  // Load the config based on CLI file or default file
+  const args = process.argv.slice(2);
+  const config = new Config(args[0] || 'config.example.json');
 
-async function init() {
-  const config = loadConfig();
-  const items = await getFeedItems(config.feedUrl);
-  const mjml = generateMjmlFromItems(items, config);
-  saveFiles(mjml, config);
+  // Create an array of feeds
+  const feeds = await Promise.all(config.feeds.map(async feedConfig => {
+    const feed = new Feed(feedConfig);
+    return await feed.resolve();
+  }));
+
+  // Generate Emails
+  const emails = config.output.formats.map(format => {
+    const email = new Email(config, feeds);
+    return email.generate(format);
+  });
+
+  console.log(emails);
+
   console.log('Process complete');
 }
 
-init();
+init(Config, Feed, Email);
