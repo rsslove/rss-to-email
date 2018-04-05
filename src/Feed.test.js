@@ -1,30 +1,77 @@
 const Feed = require('./Feed');
-const parser = new (require('rss-parser'))();
+const Parser = require('rss-parser');
+jest.mock('rss-parser');
 
 describe('Feed', () => {
   let feed;
   let feedConfig;
 
   beforeEach(() => {
+    Parser.mockClear();
+
     feedConfig = {
       description: 'This is a description',
       title: 'This is a title',
       url: 'http://www.examplefeed.com/rss',
     };
-
-    feed = new Feed(feedConfig);
-
-    parser.parseURL = jest.fn();
   });
 
   test('creates feed from configuration', () => {
+    feed = new Feed(feedConfig);
     expect(feed.feedConfig).toEqual(feedConfig);
+    expect(Parser).toHaveBeenCalledTimes(1);
   });
 
-  test('resolves feed with valid url', async () => {
+  test('resolves feed with valid url', async() => {
+    const items = [{title: 'test', content: 'test 2'}];
+
+    Parser.mockImplementation(() => {
+      return { parseURL: () => {
+          return {title: 'mock title', items};
+        }
+      };
+    });
+
+    feed = new Feed(feedConfig);
+
     const result = await feed.resolve();
 
     expect(result.description).toBe(feedConfig.description);
     expect(result.title).toBe(feedConfig.title);
+    expect(result.items).toBe(items);
+  });
+
+  test('cleans items with short content', async() => {
+    const items = [{title: 'test', content: 'test'}];
+
+    Parser.mockImplementation(() => {
+      return { parseURL: () => {
+          return {title: 'mock title', items};
+        }
+      };
+    });
+
+    feed = new Feed(feedConfig);
+
+    const result = await feed.resolve();
+
+    expect(result.items[0].content).toBe('test...');
+  });
+
+  test('it removes urls from titles', async() => {
+    const items = [{title: 'test http://www.example.com/', content: 'test more content'}];
+
+    Parser.mockImplementation(() => {
+      return { parseURL: () => {
+          return {title: 'mock title', items};
+        }
+      };
+    });
+
+    feed = new Feed(feedConfig);
+
+    const result = await feed.resolve();
+
+    expect(result.items[0].title).toBe('test ');
   });
 });
