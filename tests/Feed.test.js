@@ -1,5 +1,6 @@
-const Feed = require('./Feed');
+const Feed = require('../src/Feed');
 const Parser = require('rss-parser');
+
 jest.mock('rss-parser');
 
 describe('Feed', () => {
@@ -22,15 +23,12 @@ describe('Feed', () => {
     expect(Parser).toHaveBeenCalledTimes(1);
   });
 
-  test('resolves feed with valid url', async() => {
-    const items = [{title: 'test', content: 'test 2'}];
+  test('resolves feed with valid url', async () => {
+    const items = [{ title: 'test', content: 'test 2' }];
 
-    Parser.mockImplementation(() => {
-      return { parseURL: () => {
-          return {title: 'mock title', items};
-        }
-      };
-    });
+    Parser.mockImplementation(() => ({
+      parseURL: () => ({ title: 'mock title', items }),
+    }));
 
     feed = new Feed(feedConfig);
 
@@ -41,15 +39,12 @@ describe('Feed', () => {
     expect(result.items).toBe(items);
   });
 
-  test('cleans items with short content', async() => {
-    const items = [{title: 'test', content: 'test'}];
+  test('cleans items with short content', async () => {
+    const items = [{ title: 'test', content: 'test' }];
 
-    Parser.mockImplementation(() => {
-      return { parseURL: () => {
-          return {title: 'mock title', items};
-        }
-      };
-    });
+    Parser.mockImplementation(() => ({
+      parseURL: () => ({ title: 'mock title', items }),
+    }));
 
     feed = new Feed(feedConfig);
 
@@ -58,15 +53,12 @@ describe('Feed', () => {
     expect(result.items[0].content).toBe('test...');
   });
 
-  test('it removes urls from titles', async() => {
-    const items = [{title: 'test http://www.example.com/', content: 'test more content'}];
+  test('it removes urls from titles', async () => {
+    const items = [{ title: 'test http://www.example.com/', content: 'test more content' }];
 
-    Parser.mockImplementation(() => {
-      return { parseURL: () => {
-          return {title: 'mock title', items};
-        }
-      };
-    });
+    Parser.mockImplementation(() => ({
+      parseURL: () => ({ title: 'mock title', items }),
+    }));
 
     feed = new Feed(feedConfig);
 

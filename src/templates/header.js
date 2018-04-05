@@ -1,4 +1,4 @@
-const compile = require("string-template/compile");
+const compile = require('string-template/compile');
 
 const withBanner = `
       <!-- Header -->
@@ -18,10 +18,12 @@ const withoutBanner = `
       </mj-section>
 `;
 
-const template = function (config) {
-  const func = config.header.banner ? compile(withBanner) : compile(withoutBanner);
-  config.header.accent_color = config.accent_color;
-  return func(config.header);
+const template = (config) => {
+  const headerConfig = config.header;
+  const compileFunction = headerConfig.banner ? compile(withBanner) : compile(withoutBanner);
+  headerConfig.accent_color = config.accent_color;
+
+  return compileFunction(headerConfig);
 };
 
 module.exports = template;

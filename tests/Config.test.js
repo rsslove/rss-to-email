@@ -1,4 +1,4 @@
-const Config = require('./Config');
+const Config = require('../src/Config');
 const fs = require('fs');
 
 describe('Config', () => {
@@ -29,11 +29,11 @@ describe('Config', () => {
 
   test('creates config object when object input given', () => {
     const input = {
-      "accentColor": "#2568ba",
-      "header": {
-        "link": "http://www.feedforall.com/",
-        "title": "Test Example Input Header"
-      }
+      accentColor: '#2568ba',
+      header: {
+        link: 'http://www.feedforall.com/',
+        title: 'Test Example Input Header',
+      },
     };
 
     config = new Config(input);

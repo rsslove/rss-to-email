@@ -23,7 +23,6 @@ function merge(config1, config2) {
 }
 
 class Config {
-
   constructor(input) {
     let config;
 
@@ -47,15 +46,15 @@ class Config {
 
   static getFromJson(input) {
     return merge(Config.getDefault(), Config.getFromObject(JSON.parse(input)));
-  };
+  }
 
   static getFromFile(input) {
     return merge(Config.getDefault(), JSON.parse(fs.readFileSync(input)));
-  };
+  }
 
   static getFromObject(input) {
     return merge(Config.getDefault(), input);
-  };
+  }
 }
 
 module.exports = Config;

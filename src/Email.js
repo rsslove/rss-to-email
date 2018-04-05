@@ -11,7 +11,6 @@ const path = require('path');
 const OUTPUT_FOLDER_PATH = path.join(__dirname, '..', 'output/');
 
 class Email {
-
   constructor(config, feeds) {
     this.config = config;
     this.feeds = feeds || [];
@@ -29,8 +28,10 @@ class Email {
     this.mjmlContent += intro(this.config);
 
     // Add each feed's item to the email
-    this.feeds.forEach(feed => {
-      feed.items.forEach(item => this.mjmlContent += entryTemplate(item));
+    this.feeds.forEach((feed) => {
+      feed.items.forEach((item) => {
+        this.mjmlContent += entryTemplate(item);
+      });
     });
 
     // Add outro
@@ -50,7 +51,7 @@ class Email {
 
   saveMjml() {
     this.mjmlContent || this.generate();
-    const filePath = OUTPUT_FOLDER_PATH + this.config.filename + '.mjml';
+    const filePath = `${OUTPUT_FOLDER_PATH + this.config.filename}.mjml`;
 
     fs.writeFileSync(filePath, this.getMjml());
 
@@ -59,7 +60,7 @@ class Email {
 
   saveHtml() {
     this.mjmlContent || this.generate();
-    const filePath = OUTPUT_FOLDER_PATH + this.config.filename + '.html';
+    const filePath = `${OUTPUT_FOLDER_PATH + this.config.filename}.html`;
 
     fs.writeFileSync(filePath, this.getHtml());
 
