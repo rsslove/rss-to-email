@@ -1,4 +1,4 @@
-const Config = require('../src/Config');
+const Config = require('../../src/Config');
 const fs = require('fs');
 
 describe('Config', () => {

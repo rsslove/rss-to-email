@@ -1,4 +1,4 @@
-const Feed = require('../src/Feed');
+const Feed = require('../../src/Feed');
 const Parser = require('rss-parser');
 
 jest.mock('rss-parser');
