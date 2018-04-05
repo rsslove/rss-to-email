@@ -2,11 +2,6 @@ const Parser = require('rss-parser');
 
 function cleanItem(item) {
   const cleanedItem = item;
-  try {
-    cleanedItem.content = item.content.length < 5 ? `${item.content}...` : item.content;
-  } catch (e) {
-    console.warn('Could not clean content for item');
-  }
 
   try {
     cleanedItem.title = item.title.replace(/\bhttps?:\/\/\S+/gi, '');

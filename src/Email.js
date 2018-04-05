@@ -1,7 +1,8 @@
 const head = require('./templates/head');
 const header = require('./templates/header');
 const intro = require('./templates/intro');
-const entryTemplate = require('./templates/entry');
+const entry = require('./templates/entry');
+const entryDivider = require('./templates/entry-divider');
 const outro = require('./templates/outro');
 const foot = require('./templates/foot');
 const mjmlLib = require('mjml');
@@ -29,8 +30,9 @@ class Email {
 
     // Add each feed's item to the email
     this.feeds.forEach((feed) => {
+      this.mjmlContent += entryDivider(feed);
       feed.items.forEach((item) => {
-        this.mjmlContent += entryTemplate(item);
+        this.mjmlContent += entry(item);
       });
     });
 
