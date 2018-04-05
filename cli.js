@@ -17,12 +17,8 @@ async function init(Config, Feed, Email) {
   }));
 
   // Generate Emails
-  const emails = config.output.formats.map(format => {
-    const email = new Email(config, feeds);
-    return email.generate(format);
-  });
-
-  console.log(emails);
+  const email = new Email(config, feeds);
+  email.save();
 
   console.log('Process complete');
 }
