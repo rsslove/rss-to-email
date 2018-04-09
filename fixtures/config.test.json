@@ -1,0 +1,18 @@
+{
+  "accentColor": "black",
+  "feeds": [
+    {
+      "description": "A short custom feed description",
+      "title": "A custom feed title",
+      "url": "http://www.feedforall.com/sample.xml"
+    }
+  ],
+  "greeting": "Hey friend,",
+  "header": {
+    "banner": "http://www.example.com/image2.png",
+    "link": "http://www.example.com/",
+    "title": "Another Test Header"
+  },
+  "outro": "Thanks for reading.",
+  "signature": "Michelle Wilson, CEO at Example Co."
+}
