@@ -1,20 +1,25 @@
 {
   "accentColor": "red",
-  "feedUrl": "http://www.example.com/rss",
-  "greeting": "Hey there,",
+  "filename": "example",
   "header": {
     "banner": "http://www.example.com/image.png",
     "link": "http://www.example.com/",
     "title": "Example Header"
   },
+  "greeting": "Hey there,",
   "intro": "Thanks for opening the email! Here are some links I want you to check out:",
-  "output": {
-    "filename": "example",
-    "types": [
-      "html",
-      "mjml"
-    ]
-  },
+  "feeds": [
+    {
+      "description": "A short custom feed description",
+      "title": "A custom feed title",
+      "url": "http://www.feedforall.com/sample.xml"
+    },
+    {
+      "description": "A short custom feed description",
+      "title": "A custom feed title",
+      "url": "http://www.feedforall.com/sample.xml"
+    }
+  ],
   "outro": "Thanks for reading. We'll be back next week with more!",
   "signature": "John Smith, CMO at Example Co."
 }

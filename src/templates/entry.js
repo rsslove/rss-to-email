@@ -1,4 +1,5 @@
-const compile = require("string-template/compile");
+const compile = require('string-template/compile');
+
 const template = compile(`
       <!-- Entry -->
       <mj-section>
