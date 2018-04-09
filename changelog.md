@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Nothing yet
 
+## 0.2.0 - 2018-04-09
+
+### Added
+- Added unit and integratin tests with Jest
+- Broke main functions out into classes/objects
+- Added eslint
+- Allowing multiple RSS feeds (with optional headers/descriptions between each)
+- Add CI via Travis
+
 ## 0.0.1 - 2018-03-29
 
 ### Added
