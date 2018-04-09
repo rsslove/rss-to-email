@@ -39,20 +39,6 @@ describe('Feed', () => {
     expect(result.items).toBe(items);
   });
 
-  test('cleans items with short content', async () => {
-    const items = [{ title: 'test', content: 'test' }];
-
-    Parser.mockImplementation(() => ({
-      parseURL: () => ({ title: 'mock title', items }),
-    }));
-
-    feed = new Feed(feedConfig);
-
-    const result = await feed.resolve();
-
-    expect(result.items[0].content).toBe('test...');
-  });
-
   test('it removes urls from titles', async () => {
     const items = [{ title: 'test http://www.example.com/', content: 'test more content' }];
 
