@@ -11,23 +11,22 @@
 <script type="text/javascript">
   rssToEmail = new RssToEmail({
     "accentColor": "red",
-    "filename": "example",
     "header": {
-      "banner": "https://dummyimage.com/600x200/1b3fd1/ffffff.png&text=Email+Banner",
-      "link": "http://www.example.com/",
-      "title": "Example Header"
+      "banner": "https://dummyimage.com/660x200/1b3fd1/ffffff.png&text=Rss+to+Email+Sample",
+      "link": "https://www.portablecto.com",
+      "title": "RSS To Email Sample"
     },
     "greeting": "Hey there,",
-    "intro": "Thanks for opening the email! Here are some links I want you to check out:",
+    "intro": "Here are the latest updates:",
     "feeds": [
       {
-        "description": "A short custom feed description",
-        "title": "A custom feed title",
-        "url": "https://cors-anywhere.herokuapp.com/http://www.feedforall.com/sample.xml"
+        "description": "The latest releases for rss-to-email on Github.",
+        "title": "Releases",
+        "url": "https://cors-anywhere.herokuapp.com/https://github.com/portable-cto/rss-to-email/releases.atom"
       }
     ],
-    "outro": "Thanks for reading. We'll be back next week with more!",
-    "signature": "John Smith, CMO at Example Co."
+    "outro": "Thanks for subscribing,",
+    "signature": "Karl at <a href='https://www.portablecto.com'>Portable CTO</a>"
   });
 
   rssToEmail.getEmail('html').then(function (email) {
