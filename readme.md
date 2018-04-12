@@ -1,9 +1,10 @@
 # rss-to-email
 
-> Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS feeds. 
+Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS feeds.
 
-[![Travis Build Status](https://travis-ci.org/portable-cto/rss-to-email.png?branch=master)](https://travis-ci.org/portable-cto/rss-to-email) [![GitHub release](https://img.shields.io/github/release/portable-cto/rss-to-email.svg)](https://github.com/portable-cto/rss-to-email)
-<!-- [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/%7B%7Bstatus_id%7D%7D)](https://ci.appveyor.com/project/%7B%7Busername%7D%7D/%7B%7Bproject_name%7D%7D) [![Join the chat at https://gitter.im/{ORG-or-USERNAME}/{REPO-NAME}](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GitHub forks](https://img.shields.io/github/forks/satwikkansal/readme_styles.svg?style=social&label=Fork)](https://github.com/{USERNAME}/{REPO-NAME}) [![GitHub stars](https://img.shields.io/github/stars/{USERNAME}/{REPO-NAME}.svg?style=social&label=Star)](https://github.com/readme_styles) [![GitHub tag](https://img.shields.io/github/tag/{USERNAME}/{REPO-NAME}.svg)](https://github.com/{USERNAME}/{REPO-NAME}) -->
+> Note: This project is pre-version 1.0.0, so breaking changes may occur. Use at your own risk or lock down to a specific version using NPM. 
+
+[![Travis Build Status](https://travis-ci.org/portable-cto/rss-to-email.png?branch=master)](https://travis-ci.org/portable-cto/rss-to-email) [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/rss-to-email) [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/portable-cto/rss-to-email)
 
 ```
                                           _                                   _ _ 
