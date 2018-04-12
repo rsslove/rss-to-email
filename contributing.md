@@ -1,9 +1,55 @@
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change.
+When contributing to this repository, please first discuss the change you wish to make via the [issues on Github](https://github.com/portable-cto/rss-to-email/issues).
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
+
+## Local Development
+
+### Prerequisites
+
+In order to do local development on this project, you'll need to be running:
+
+- [Node 7.10+](https://nodejs.org/)
+- [npm 4.2+](https://www.npmjs.com/)
+
+### Installation
+
+Clone this repository:
+
+```
+$ git clone https://github.com/portable-cto/rss-to-email.git
+```
+
+Install the dependencies:
+
+```
+$ npm install 
+```
+
+### Testing and Linting
+
+Tests are written using [Jest](https://facebook.github.io/jest/), and are kept in the `tests/` directory. We use integration tests to ensure that the whole library works as intended, and unit tests to evaluate individual functions and classes in isolation.
+
+To run the whole test suite once:
+
+```
+npm test
+```
+
+Or to run it and watch for updates:
+
+```
+npm run test:watch
+```
+
+We use [eslint](https://eslint.org/) to standardize code styles. Run the linter with:
+
+```
+npm run lint
+```
+
+PRs will not be evaluated until the tests and linting passes.
 
 ## Pull Request Process
 

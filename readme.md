@@ -4,7 +4,10 @@ Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS
 
 > Note: This project is pre-version 1.0.0, so breaking changes may occur. Use at your own risk or lock down to a specific version using NPM. 
 
-[![Travis Build Status](https://travis-ci.org/portable-cto/rss-to-email.png?branch=master)](https://travis-ci.org/portable-cto/rss-to-email) [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/rss-to-email)[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/portable-cto/rss-to-email)
+[![Travis Build Status](https://travis-ci.org/portable-cto/rss-to-email.png?branch=master)](https://travis-ci.org/portable-cto/rss-to-email)
+[![npm](https://img.shields.io/npm/v/rss-to-email.svg)](https://www.npmjs.com/package/rss-to-email)
+[![GitHub stars](https://img.shields.io/github/stars/portable-cto/rss-to-email.svg?style=social&label=Stars)](https://github.com/portable-cto/rss-to-email)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ```
                                           _                                   _ _ 
@@ -20,43 +23,48 @@ Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Configuration](#configuration)
+  - [Node](#node)
+  - [Command Line](#cli)
+  - [Browser](#browser)
   - [Output](#output)
+  - [Configuration](#configuration)
 - [Contributing](#contributing)
 - [License](#license)
 
 
-## Prerequisites
-
-- [Node 7.10+](https://nodejs.org/)
-- [npm 4.2+](https://www.npmjs.com/)
-
 ## Installation
 
-Clone this repository:
+This package is [hosted on npm](https://www.npmjs.com/package/rss-to-email) for your convenience. To install and save it to your project's dependencies, run:
 
-```sh
-$ git clone https://github.com/portable-cto/rss-to-email.git
 ```
-
-Install the dependencies:
-
-```sh
-$ npm install 
+npm install rss-to-email --save
 ```
 
 ## Usage
 
-Copy `config.example.json` to `config.json` and customize it for your project's needs (see [#Configuration](#configuration) section below for details).
+### Node
 
-Run the script from the command line:
+The recommended way to use this package is as a Node package. After installing the project, instantiate the `RssToEmail` class with a config file or path to a config file:
 
-```sh
-$ npm run cli -- config.json
+```javascript 1.8
+
+const RssToEmail = require('rss-to-email');
+
+const rssToEmail = new RssToEmail('config.example.json');
+
+// Generate and save HTML and MJML emails
+rssToEmail.saveEmails();
+
+// Get the HTML text of the email
+const htmlEmail = rssToEmail.getEmail('html');
+
 ```
+
+### Browser
+
+You can also run this library in your browser, but you will need a polyfill for promises and a CORS proxy. A complete example of this method is available in the `index.html` file at the root of this directory.
 
 ### Output
 
@@ -83,37 +91,11 @@ For an example config file, see `config.example.json`.
 
 You can store multiple config files in the root of this project, and the `.gitignore` file should ignore them if you follow the naming convention, `config.[NAME].json` where `[NAME]` is your identifying name for the config.
 
-### Importing as an npm package
-
-Coming soon!
 
 ## Contributing
 
 All patches, fixes, and ideas welcome! Please read [contributing.md](contributing.md) for furthers details.
 
-## Testing and Linting
-
-Tests are written using [Jest](https://facebook.github.io/jest/), and are kept in the `tests/` directory. We use integration tests to ensure that the whole library works as intended, and unit tests to evaluate individual functions and classes in isolation.
-
-To run the whole test suite once:
-
-```
-npm test
-```
-
-Or to run it and watch for updates:
-
-```
-npm run test:watch
-```
-
-We use [eslint](https://eslint.org/) to standardize code styles. Run the linter with:
-
-```
-npm run lint
-```
-
-PRs will not be evaluated until the tests and linting passes.
 
 ## License
 
