@@ -4,7 +4,7 @@ Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS
 
 > Note: This project is pre-version 1.0.0, so breaking changes may occur. Use at your own risk or lock down to a specific version using NPM. 
 
-[![Travis Build Status](https://travis-ci.org/portable-cto/rss-to-email.png?branch=master)](https://travis-ci.org/portable-cto/rss-to-email) [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/rss-to-email) [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/portable-cto/rss-to-email)
+[![Travis Build Status](https://travis-ci.org/portable-cto/rss-to-email.png?branch=master)](https://travis-ci.org/portable-cto/rss-to-email) [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/rss-to-email)[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)](https://github.com/portable-cto/rss-to-email)
 
 ```
                                           _                                   _ _ 
