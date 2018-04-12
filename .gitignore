@@ -8,3 +8,4 @@ config.json
 !fixtures/config.test.json
 output/*
 !.gitkeep
+coverage/

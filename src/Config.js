@@ -4,29 +4,29 @@ const isJson = require('is-valid-json');
 
 const DEFAULT_CONFIG_WARNING_MESSAGE = 'No configuration file or object included. Defaults will be used.';
 const DEFAULT_CONFIG = {
-  "accentColor": "red",
-  "filename": "example",
-  "header": {
-    "banner": "http://www.example.com/image.png",
-    "link": "http://www.example.com/",
-    "title": "Example Header"
+  accentColor: 'red',
+  filename: 'example',
+  header: {
+    banner: 'http://www.example.com/image.png',
+    link: 'http://www.example.com/',
+    title: 'Example Header',
   },
-  "greeting": "Hey there,",
-  "intro": "Thanks for opening the email! Here are some links I want you to check out:",
-  "feeds": [
+  greeting: 'Hey there,',
+  intro: 'Thanks for opening the email! Here are some links I want you to check out:',
+  feeds: [
     {
-      "description": "A short custom feed description",
-      "title": "A custom feed title",
-      "url": "http://www.feedforall.com/sample.xml"
+      description: 'A short custom feed description',
+      title: 'A custom feed title',
+      url: 'http://www.feedforall.com/sample.xml',
     },
     {
-      "description": "A short custom feed description",
-      "title": "A custom feed title",
-      "url": "http://www.feedforall.com/sample.xml"
-    }
+      description: 'A short custom feed description',
+      title: 'A custom feed title',
+      url: 'http://www.feedforall.com/sample.xml',
+    },
   ],
-  "outro": "Thanks for reading. We'll be back next week with more!",
-  "signature": "John Smith, CMO at Example Co."
+  outro: "Thanks for reading. We'll be back next week with more!",
+  signature: 'John Smith, CMO at Example Co.',
 };
 
 function isFilepathString(input) {
