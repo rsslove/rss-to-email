@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="./dist/index.min.js" charset="utf-8"></script>
+</head>
+<body id="email">
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js"></script>
+<script type="text/javascript">
+  rssToEmail = new RssToEmail({
+    "accentColor": "red",
+    "filename": "example",
+    "header": {
+      "banner": "https://dummyimage.com/600x200/1b3fd1/ffffff.png&text=Email+Banner",
+      "link": "http://www.example.com/",
+      "title": "Example Header"
+    },
+    "greeting": "Hey there,",
+    "intro": "Thanks for opening the email! Here are some links I want you to check out:",
+    "feeds": [
+      {
+        "description": "A short custom feed description",
+        "title": "A custom feed title",
+        "url": "https://cors-anywhere.herokuapp.com/http://www.feedforall.com/sample.xml"
+      }
+    ],
+    "outro": "Thanks for reading. We'll be back next week with more!",
+    "signature": "John Smith, CMO at Example Co."
+  });
+
+  rssToEmail.getEmail('html').then(function (email) {
+    document.getElementById('email').innerHTML = email;
+  });
+</script>
+</html>

@@ -1,9 +1,9 @@
 /**
  * Entrypoint for Javascript/Node applications
  */
-const Config = require('./src/Config');
-const Feed = require('./src/Feed');
-const Email = require('./src/Email');
+const Config = require('./Config');
+const Feed = require('./Feed');
+const Email = require('./Email');
 
 class RssToEmail {
 

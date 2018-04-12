@@ -1,13 +1,36 @@
 const fe = require('file-exists');
 const fs = require('fs');
 const isJson = require('is-valid-json');
-const path = require('path');
 
-const DEFAULT_CONFIG_FILEPATH = path.join(__dirname, '..', 'config.example.json');
 const DEFAULT_CONFIG_WARNING_MESSAGE = 'No configuration file or object included. Defaults will be used.';
+const DEFAULT_CONFIG = {
+  "accentColor": "red",
+  "filename": "example",
+  "header": {
+    "banner": "http://www.example.com/image.png",
+    "link": "http://www.example.com/",
+    "title": "Example Header"
+  },
+  "greeting": "Hey there,",
+  "intro": "Thanks for opening the email! Here are some links I want you to check out:",
+  "feeds": [
+    {
+      "description": "A short custom feed description",
+      "title": "A custom feed title",
+      "url": "http://www.feedforall.com/sample.xml"
+    },
+    {
+      "description": "A short custom feed description",
+      "title": "A custom feed title",
+      "url": "http://www.feedforall.com/sample.xml"
+    }
+  ],
+  "outro": "Thanks for reading. We'll be back next week with more!",
+  "signature": "John Smith, CMO at Example Co."
+};
 
 function isFilepathString(input) {
-  return typeof input === 'string' && fe.sync(input);
+  return typeof input === 'string' && fs !== undefined && fe.sync(input);
 }
 
 function isJsonString(input) {
@@ -41,7 +64,7 @@ class Config {
   }
 
   static getDefault() {
-    return JSON.parse(fs.readFileSync(DEFAULT_CONFIG_FILEPATH));
+    return DEFAULT_CONFIG;
   }
 
   static getFromJson(input) {

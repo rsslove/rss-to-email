@@ -1,7 +1,7 @@
 const fe = require('file-exists');
 const fs = require('fs');
 const path = require('path');
-const RssToEmail = require('../../index');
+const RssToEmail = require('../../src/index');
 
 function outputFilePath(filename) {
   return path.join(__dirname, '..', '..', 'output', filename);
