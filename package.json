@@ -2,7 +2,7 @@
   "name": "rss-to-email",
   "description": "Generate HTML email from your RSS feeds",
   "homepage": "https://github.com/portable-cto/rss-to-email",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "scripts": {
     "build": "webpack",
     "cli": "node cli.js",
