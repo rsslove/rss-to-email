@@ -4,7 +4,7 @@ const template = compile(`
       <!-- Entry -->
       <mj-section>
         <mj-column>
-          <mj-link href="{link}">{title}</mj-link>
+          <mj-text><a href="{link}">{title}</a></mj-text>
           <mj-text>{content}</mj-text>
           <mj-divider></mj-divider>
         </mj-column>
