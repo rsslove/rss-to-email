@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - Improvements to templates.
+- Upgraded to mjml v4.
 
 ## 0.3.0 - 2018-04-13
 

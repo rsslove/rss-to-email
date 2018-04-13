@@ -109,7 +109,7 @@ class Email {
   getHtml() {
     this.mjmlContent || this.generate();
 
-    return mjmlLib.mjml2html(this.getMjml()).html;
+    return mjmlLib(this.getMjml()).html;
   }
 }
 
