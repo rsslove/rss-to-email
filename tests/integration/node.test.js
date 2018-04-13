@@ -2,6 +2,7 @@ const fe = require('file-exists');
 const fs = require('fs');
 const path = require('path');
 const RssToEmail = require('../../src/index');
+const Email = require('../../src/Email');
 
 function outputFilePath(filename) {
   return path.join(__dirname, '..', '..', 'output', filename);
@@ -48,6 +49,6 @@ describe('Node - Integration', () => {
 
     expect(outputFileExists('example.html')).toBeTruthy();
     expect(outputFileExists('example.mjml')).toBeTruthy();
-    expect(result).toBeUndefined();
+    expect(result).toBeInstanceOf(Email);
   });
 });

@@ -7,8 +7,9 @@
     "build": "webpack",
     "cli": "node cli.js",
     "lint": "eslint src/",
-    "test": "jest tests/unit --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "jest",
     "test:integration": "jest tests/integration",
+    "test:unit": "jest tests/unit --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test:watch": "jest --watchAll"
   },
   "license": "Apache-2.0",

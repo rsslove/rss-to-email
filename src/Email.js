@@ -12,12 +12,21 @@ const path = require('path');
 const OUTPUT_FOLDER_PATH = path.join(__dirname, '..', 'output/');
 
 class Email {
+  /**
+   * Instantiate a new email object
+   * @param {object} config
+   * @param {array} feeds
+   */
   constructor(config, feeds) {
     this.config = config;
     this.feeds = feeds || [];
     this.mjmlContent = undefined;
   }
 
+  /**
+   * Generate mjmlContent from the config and feeds set in the constructor
+   * @returns {Email}
+   */
   generate() {
     // Initialize the template
     this.mjmlContent = head(this.config);
@@ -45,12 +54,22 @@ class Email {
     return this;
   }
 
+  /**
+   * Saves an HTML and MJML email from the content or generates it first.
+   * @return {Email}
+   */
   save() {
     this.mjmlContent || this.generate();
     this.saveMjml();
     this.saveHtml();
+
+    return this;
   }
 
+  /**
+   * Saves the MJML email to the output directory.
+   * @return {Email}
+   */
   saveMjml() {
     this.mjmlContent || this.generate();
     const filePath = `${OUTPUT_FOLDER_PATH + this.config.filename}.mjml`;
@@ -60,6 +79,10 @@ class Email {
     return this;
   }
 
+  /**
+   * Saves the HTML email to the output directory.
+   * @return {Email}
+   */
   saveHtml() {
     this.mjmlContent || this.generate();
     const filePath = `${OUTPUT_FOLDER_PATH + this.config.filename}.html`;
@@ -69,12 +92,20 @@ class Email {
     return this;
   }
 
+  /**
+   * Get the MJML email as a string.
+   * @return {string}
+   */
   getMjml() {
     this.mjmlContent || this.generate();
 
     return this.mjmlContent;
   }
 
+  /**
+   * Get the HTML email as a string.
+   * @return {string}
+   */
   getHtml() {
     this.mjmlContent || this.generate();
 

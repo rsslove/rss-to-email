@@ -29,23 +29,49 @@ const DEFAULT_CONFIG = {
   signature: 'John Smith, CMO at Example Co.',
 };
 
+/**
+ * Determines whether an input is a filepath or not
+ * @param {(string|Object)} input
+ * @returns {boolean}
+ */
 function isFilepathString(input) {
-  return typeof input === 'string' && fs !== undefined && fe.sync(input);
+  return typeof input === 'string' && fe.sync(input);
 }
 
+/**
+ * Determines whether an input string is a JSON object or not
+ * @param {(string|Object)} input
+ * @returns {boolean}
+ */
 function isJsonString(input) {
   return typeof input === 'string' && isJson(input);
 }
 
+/**
+ * Determines whether an input is a configuration object or not
+ * @param {(string|Object)} input
+ * @returns {boolean}
+ */
 function isConfigObject(input) {
   return typeof input === 'object';
 }
 
+/**
+ * Merge two configuration objects
+ * @param {Object} config1
+ * @param {Object} config2
+ * @returns {Object}
+ */
 function merge(config1, config2) {
   return Object.assign(config1, config2);
 }
 
 class Config {
+  /**
+   * Instantiates a new config object based on a string or object input
+   * @param  {(string|Object)} input
+   * @returns {Object}
+   */
   constructor(input) {
     let config;
 
@@ -63,18 +89,37 @@ class Config {
     return config;
   }
 
+  /**
+   * Get the default config object
+   * @returns {Object}
+   */
   static getDefault() {
     return DEFAULT_CONFIG;
   }
 
+  /**
+   * Generate a config object from a json string
+   * @param {string} input
+   * @returns {Object}
+   */
   static getFromJson(input) {
     return merge(Config.getDefault(), Config.getFromObject(JSON.parse(input)));
   }
 
+  /**
+   * Generate a config object from a filepath
+   * @param {string} input
+   * @returns {Object}
+   */
   static getFromFile(input) {
     return merge(Config.getDefault(), JSON.parse(fs.readFileSync(input)));
   }
 
+  /**
+   * Generate a config object from an object
+   * @param {Object} input
+   * @returns {Object}
+   */
   static getFromObject(input) {
     return merge(Config.getDefault(), input);
   }

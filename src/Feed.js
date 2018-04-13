@@ -1,8 +1,14 @@
 const Parser = require('rss-parser');
 
+/**
+ * Cleans an item
+ * @param {Object} item
+ * @return {Object}
+ */
 function cleanItem(item) {
   const cleanedItem = item;
 
+  // Remove url's from the title
   try {
     cleanedItem.title = item.title.replace(/\bhttps?:\/\/\S+/gi, '');
   } catch (e) {
@@ -13,11 +19,19 @@ function cleanItem(item) {
 }
 
 class Feed {
+  /**
+   * Creates a new Feed from a feed configuration object
+   * @param {object} feedConfig
+   */
   constructor(feedConfig) {
     this.feedConfig = feedConfig;
     this.parser = new Parser();
   }
 
+  /**
+   * Promises a feed with items embedded
+   * @return {Promise<Object>}
+   */
   async resolve() {
     const feedObject = await this.parser.parseURL(this.feedConfig.url);
 

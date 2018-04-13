@@ -43,7 +43,7 @@ Or to run it and watch for updates:
 npm run test:watch
 ```
 
-We use [eslint](https://eslint.org/) to standardize code styles. Run the linter with:
+We use [eslint](https://eslint.org/) to standardize code styles and [JSDoc](http://usejsdoc.org/index.html) style docblocks are enforced. Run the linter with:
 
 ```
 npm run lint
