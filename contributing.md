@@ -53,11 +53,21 @@ PRs will not be evaluated until the tests and linting passes.
 
 ## Pull Request Process
 
-1. Ensure any install or build dependencies are removed before the end of the layer when doing a build.
-2. Update the README.md with details of changes to the interface, this includes new environment variables, exposed ports, useful file locations and container parameters.
-3. Increase the version numbers in any examples files and the README.md to the new version that this
-   Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+1. Make sure tests are running and linting passes before you submit a PR.
+2. Update any relevant parts of the documentation in the `readme.md` file.
+3. Update the `changelog.md` file with any new updates, breaking changes, or important notes.
+3. Run the build process: `npm run build`.
+4. Include a link to any relevant issues in the PR on Github. If there are problems with your PR, we will discuss them in Github before merging.
+
+## Releases
+
+This library uses [semantic versioning](https://semver.org/) to inform users of breaking and non-breaking changes. When a new release is ready, the following steps will be taken:
+
+- Make sure the latest updates are built: `npm run build`.
+- Make sure tests still pass: `npm run test`.
+- Run the release script: `npm version <SEMANTIC_VERSION> && npm publish && git push --tags` with the release number you want to use. 
+
+This will create a new Tag in Github and a new release on NPM.
 
 ## Code of Conduct
 

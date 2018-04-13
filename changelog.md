@@ -8,11 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Nothing yet
 
-## 0.3.0 - 2018-04-12
+## 0.3.0 - 2018-04-13
 
 ### Added
 - Infrastructure to build as browser-ready JS project.
-- Docs about importing as node module.
+- Example `index.html` file to demonstrate browser use.
+- Docs about importing as node module, contributing, releasing new versions, etc.
+- More fun badges!
 - Improvements to eslint (docblocks and blank line before `return`).
 
 ## 0.2.0 - 2018-04-09
