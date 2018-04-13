@@ -22,6 +22,8 @@ Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS
 
 [![rss-to-email example](http://g.recordit.co/tIa8cImPWS.gif)](http://recordit.co/tIa8cImPWS)
 
+You can see a sample email generated in the browser live at [portable-cto.github.io/rss-to-email](https://portable-cto.github.io/rss-to-email/).
+
 ## Table of Contents
 
 - [Installation](#installation)
