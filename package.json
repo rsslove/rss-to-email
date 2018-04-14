@@ -14,8 +14,6 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "file-exists": "^5.0.1",
-    "is-valid-json": "^1.0.2",
     "mjml": "^4.0.3",
     "rss-parser": "^3.1.2",
     "stampit": "^4.1.1",
@@ -30,6 +28,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.11.0",
+    "file-exists": "^5.0.1",
     "jest": "^22.4.3",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
