@@ -1,14 +1,15 @@
-/**
- * Entrypoint for CLI applications
- */
-const RssToEmail = require('./src/index');
+const { RssToEmail }= require('./src/RssToEmail');
 
-function init() {
-  const rssToEmail = new RssToEmail(process.argv.slice(2)[0] || 'config.example.json');
+async function init() {
+  const rssToEmail = RssToEmail({
+    accentColor: 'red',
+  });
 
-  rssToEmail.saveEmails();
+  const html = await rssToEmail.getEmail();
+  const mjml = await rssToEmail.getEmail('mjml');
 
   console.log('Process complete');
+  console.log(mjml);
 }
 
 init();

@@ -58,8 +58,6 @@ const Config = stampit({
       this[property] = options[property] || DEFAULT_CONFIG_OBJECT[property];
     });
   },
-  methods: {
-  }
 });
 
 module.exports = Config;

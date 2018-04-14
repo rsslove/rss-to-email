@@ -6,11 +6,11 @@ const entryDivider = require('./templates/entry-divider');
 const outro = require('./templates/outro');
 const foot = require('./templates/foot');
 const mjmlLib = require('mjml');
-const fs = require('fs');
-const path = require('path');
 const stampit = require('stampit');
 
-const OUTPUT_FOLDER_PATH = path.join(__dirname, '..', 'output/');
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 const Email = stampit({
   props: {
@@ -61,42 +61,8 @@ const Email = stampit({
       return this;
     },
 
-    /**
-     * Saves an HTML and MJML email from the content or generates it first.
-     * @return {Email}
-     */
-    save() {
-      this.mjmlContent || this.generate();
-      this.saveMjml();
-      this.saveHtml();
-
-      return this;
-    },
-
-    /**
-     * Saves the MJML email to the output directory.
-     * @return {Email}
-     */
-    saveMjml() {
-      this.mjmlContent || this.generate();
-      const filePath = `${OUTPUT_FOLDER_PATH + this.config.filename}.mjml`;
-
-      fs.writeFileSync(filePath, this.getMjml());
-
-      return this;
-    },
-
-    /**
-     * Saves the HTML email to the output directory.
-     * @return {Email}
-     */
-    saveHtml() {
-      this.mjmlContent || this.generate();
-      const filePath = `${OUTPUT_FOLDER_PATH + this.config.filename}.html`;
-
-      fs.writeFileSync(filePath, this.getHtml());
-
-      return this;
+    get(format) {
+      return this[`get${capitalizeFirstLetter(format)}`]();
     },
 
     /**
@@ -118,5 +84,6 @@ const Email = stampit({
     },
   },
 });
+
 
 module.exports = Email;
