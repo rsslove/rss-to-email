@@ -24,7 +24,7 @@ class RssToEmail {
     const feeds = await this.getFeeds();
 
     // Generate Email
-    const email = new Email(this.config, feeds);
+    const email = Email({ config: this.config, feeds });
 
     return format === 'mjml' ? email.getMjml() : email.getHtml();
   }
@@ -39,7 +39,7 @@ class RssToEmail {
     const feeds = await this.getFeeds();
 
     // Generate Email
-    const email = new Email(this.config, feeds);
+    const email = Email({ config: this.config, feeds });
 
     return format === 'mjml' ? email.saveMjml() : email.saveHtml();
   }
@@ -52,10 +52,7 @@ class RssToEmail {
     // Create an array of feeds
     const feeds = await this.getFeeds();
 
-    // Generate Email
-    const email = new Email(this.config, feeds);
-
-    return email.save();
+    return Email({ config: this.config, feeds }).save();
   }
 
   /**

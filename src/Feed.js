@@ -7,19 +7,20 @@ const stampit = require('stampit');
  * @return {Object}
  */
 function cleanItem(item) {
-  item.title = item.title.replace(/\bhttps?:\/\/\S+/gi, '');
+  const cleanedItem = Object.assign({}, item);
+  cleanedItem.title = item.title.replace(/\bhttps?:\/\/\S+/gi, '');
 
-  return item;
+  return cleanedItem;
 }
 
 const Feed = stampit({
   props: {
-    config: null,
-    parser: null,
-    items: null,
-    url: null,
-    title: null,
-    description: null,
+    config: undefined,
+    parser: undefined,
+    items: undefined,
+    url: undefined,
+    title: undefined,
+    description: undefined,
   },
 
   /**
