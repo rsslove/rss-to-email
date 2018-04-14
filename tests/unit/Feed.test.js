@@ -18,38 +18,33 @@ describe('Feed', () => {
   });
 
   test('creates feed from configuration', () => {
-    feed = new Feed(feedConfig);
-    expect(feed.feedConfig).toEqual(feedConfig);
+    feed = Feed({feedConfig});
+
+    expect(feed.config).toEqual(feedConfig);
     expect(Parser).toHaveBeenCalledTimes(1);
   });
 
   test('resolves feed with valid url', async () => {
     const items = [{ title: 'test', content: 'test 2' }];
-
     Parser.mockImplementation(() => ({
       parseURL: () => ({ title: 'mock title', items }),
     }));
 
-    feed = new Feed(feedConfig);
+    const result = await Feed({feedConfig}).resolve();
 
-    const result = await feed.resolve();
-
-    expect(result.description).toBe(feedConfig.description);
-    expect(result.title).toBe(feedConfig.title);
-    expect(result.items).toBe(items);
+    expect(result.description).toEqual(feedConfig.description);
+    expect(result.title).toEqual(feedConfig.title);
+    expect(result.items).toEqual(items);
   });
 
   test('it removes urls from titles', async () => {
     const items = [{ title: 'test http://www.example.com/', content: 'test more content' }];
-
     Parser.mockImplementation(() => ({
       parseURL: () => ({ title: 'mock title', items }),
     }));
 
-    feed = new Feed(feedConfig);
+    const result = await Feed({feedConfig}).resolve();
 
-    const result = await feed.resolve();
-
-    expect(result.items[0].title).toBe('test ');
+    expect(result.items[0].title).toEqual('test ');
   });
 });

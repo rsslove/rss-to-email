@@ -40,7 +40,7 @@ describe('Node - Integration', () => {
     const result = await subject.getEmail('html');
 
     expect(result.length).toBeGreaterThan(10);
-    expect(result).toContain('<!doctype html><html');
+    expect(result).toContain('<!doctype html>');
   });
 
   test('save emails', async () => {

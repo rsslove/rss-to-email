@@ -60,14 +60,10 @@ class RssToEmail {
 
   /**
    * Get the an array of feed objects
-   * @return {Promise<Object[]>}
+   * @return {Promise<Feed[]>}
    */
   getFeeds() {
-    return Promise.all(this.config.feeds.map((feedConfig) => {
-      const feed = new Feed(feedConfig);
-
-      return feed.resolve();
-    }));
+    return Promise.all(this.config.feeds.map(feedConfig => Feed({ feedConfig }).resolve()));
   }
 }
 

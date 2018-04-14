@@ -18,6 +18,7 @@
     "is-valid-json": "^1.0.2",
     "mjml": "^4.0.3",
     "rss-parser": "^3.1.2",
+    "stampit": "^4.1.1",
     "string-template": "^1.0.0"
   },
   "devDependencies": {
