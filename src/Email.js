@@ -8,10 +8,6 @@ const foot = require('./templates/foot');
 const mjmlLib = require('mjml');
 const stampit = require('stampit');
 
-function capitalizeFirstLetter(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
 const Email = stampit({
   props: {
     config: undefined,
@@ -59,10 +55,6 @@ const Email = stampit({
       this.mjmlContent += foot(this.config);
 
       return this;
-    },
-
-    get(format) {
-      return this[`get${capitalizeFirstLetter(format)}`]();
     },
 
     /**

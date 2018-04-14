@@ -3,6 +3,14 @@ const Feed = require('./Feed');
 const Email = require('./Email');
 const stampit = require('stampit');
 
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function emailFormatToMethodName(format) {
+  return `get${capitalizeFirstLetter(format)}`;
+}
+
 const RssToEmail = stampit({
   props: {
     config: undefined,
@@ -26,7 +34,8 @@ const RssToEmail = stampit({
 
     async getEmail(format) {
       this.email || await this.generateEmail();
-      return this.email.get(format || this.defaultFormat);
+      const methodName = emailFormatToMethodName(format || this.defaultFormat);
+      return this.email[methodName]();
     },
 
     resolveFeeds(feeds) {
@@ -34,7 +43,7 @@ const RssToEmail = stampit({
     },
 
     resolveFeed(feedConfig) {
-      return Feed({ feedConfig }).resolve();
+      return Feed({feedConfig}).resolve();
     }
   }
 });

@@ -1,4 +1,4 @@
-const { RssToEmail }= require('./src/RssToEmail');
+const RssToEmail = require('./src/RssToEmail');
 
 async function init() {
   const rssToEmail = RssToEmail({
