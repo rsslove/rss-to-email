@@ -11,18 +11,16 @@ Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ```
-                                          _                                   _ _ 
-                       _ __ ___ ___      | |_ ___         ___ _ __ ___   __ _(_) |
-                      | '__/ __/ __|_____| __/ _ \ _____ / _ \ '_ ` _ \ / _` | | |
-                      | |  \__ \__ \_____| || (_) |_____|  __/ | | | | | (_| | | |
-                      |_|  |___/___/      \__\___/       \___|_| |_| |_|\__,_|_|_|
-                                                                                  
+                                _                                   _ _ 
+             _ __ ___ ___      | |_ ___         ___ _ __ ___   __ _(_) |
+            | '__/ __/ __|_____| __/ _ \ _____ / _ \ '_ ` _ \ / _` | | |
+            | |  \__ \__ \_____| || (_) |_____|  __/ | | | | | (_| | | |
+            |_|  |___/___/      \__\___/       \___|_| |_| |_|\__,_|_|_|
+                                                                        
 
  ```
 
-[![rss-to-email example](http://g.recordit.co/tIa8cImPWS.gif)](http://recordit.co/tIa8cImPWS)
-
-You can see a sample email generated in the browser live at [portable-cto.github.io/rss-to-email](https://portable-cto.github.io/rss-to-email/).
+[![rss-to-email example](http://g.recordit.co/KKSAZBRdsT.gif)](http://g.recordit.co/KKSAZBRdsT.gif)
 
 
 ## Table of Contents
