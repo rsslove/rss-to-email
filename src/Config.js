@@ -8,6 +8,11 @@ const HeaderConfig = stampit({
     link: undefined,
     title: undefined,
   },
+  /**
+   * Initialize
+   * @param {object} options
+   * @return {void}
+   */
   init(options) {
     this.banner = options.banner;
     this.link = options.link;
@@ -21,6 +26,11 @@ const FeedConfig = stampit({
     title: undefined,
     url: undefined,
   },
+  /**
+   * Initialize
+   * @param {object} options
+   * @return {void}
+   */
   init(options) {
     this.description = options.description;
     this.title = options.title;
@@ -49,6 +59,11 @@ const DEFAULT_CONFIG_OBJECT = {
 
 const Config = stampit({
   props: DEFAULT_CONFIG_OBJECT,
+  /**
+   * Initialize
+   * @param {object} options
+   * @return {void}
+   */
   init(options) {
     if (Object.keys(options).length === 0 && options.constructor === Object) {
       throw DEFAULT_CONFIG_WARNING_MESSAGE;

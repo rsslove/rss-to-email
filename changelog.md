@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improvements to templates.
 - Upgraded to mjml v4.
 - Refactored objects/classes with [Stampit](https://github.com/stampit-org/stampit).
+- Removing `fs` and `path` modules from core library.
+- TODO: Reimplement and document CLI
 
 ## 0.3.0 - 2018-04-13
 
