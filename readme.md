@@ -66,7 +66,23 @@ rssToEmail.getEmail('mjml').then((email) => {
 
 ### Command Line
 
-Coming soon!
+You can install this package globally and run it as a command line tool as well. First install it:
+
+```
+npm install -g rss-to-email
+```
+
+Then run the tool:
+
+```
+rss-to-email <config-file-path> <output-folder-path>
+```
+
+The path should be relative to your current directory. For example, if your config file is at `./config.json` and you want to output the resulting files to a directory `./output`, you would run:
+
+```
+rss-to-email ./config.json ./output
+```
 
 ### Browser
 
