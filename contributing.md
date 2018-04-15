@@ -63,7 +63,6 @@ PRs will not be evaluated until the tests and linting passes.
 
 This library uses [semantic versioning](https://semver.org/) to inform users of breaking and non-breaking changes. When a new release is ready, the following steps will be taken:
 
-- Make sure the latest updates are built: `npm run build`.
 - Make sure tests still pass: `npm run test`.
 - Run the release script: `npm version <SEMANTIC_VERSION> && npm publish && git push --tags` with the release number you want to use. 
 
