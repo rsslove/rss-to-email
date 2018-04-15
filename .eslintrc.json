@@ -22,7 +22,8 @@
         "require": {
           "FunctionDeclaration": true,
           "MethodDefinition": true,
-          "ClassDeclaration": false
+          "ClassDeclaration": false,
+          "FunctionExpression": true
         }
       }
     ],

@@ -1,4 +1,5 @@
 const Parser = require('rss-parser');
+const stampit = require('stampit');
 
 /**
  * Cleans an item
@@ -6,44 +7,48 @@ const Parser = require('rss-parser');
  * @return {Object}
  */
 function cleanItem(item) {
-  const cleanedItem = item;
-
-  // Remove url's from the title
-  try {
-    cleanedItem.title = item.title.replace(/\bhttps?:\/\/\S+/gi, '');
-  } catch (e) {
-    console.warn('Could not clean title for item');
-  }
+  const cleanedItem = Object.assign({}, item);
+  cleanedItem.title = item.title.replace(/\bhttps?:\/\/\S+/gi, '');
 
   return cleanedItem;
 }
 
-class Feed {
+const Feed = stampit({
+  props: {
+    config: undefined,
+    parser: undefined,
+    items: undefined,
+    url: undefined,
+    title: undefined,
+    description: undefined,
+  },
+
   /**
    * Creates a new Feed from a feed configuration object
-   * @param {object} feedConfig
+   * @param { Object } Feed configuration object
+   * @return { void }
    */
-  constructor(feedConfig) {
-    this.feedConfig = feedConfig;
+  init({ feedConfig }) {
+    this.config = feedConfig;
     this.parser = new Parser();
-  }
+  },
 
-  /**
-   * Promises a feed with items embedded
-   * @return {Promise<Object>}
-   */
-  async resolve() {
-    const feedObject = await this.parser.parseURL(this.feedConfig.url);
+  methods: {
+    /**
+     * Promises a feed with items embedded
+     * @return { Promise<Feed> }
+     */
+    async resolve() {
+      const feedObject = await this.parser.parseURL(this.config.url);
 
-    // Clean the feed object
-    feedObject.items.map(item => cleanItem(item));
+      this.items = feedObject.items.map(item => cleanItem(item));
+      this.title = this.config.title || feedObject.title;
+      this.description = this.config.description || feedObject.description;
+      this.url = this.config.url || feedObject.feedUrl;
 
-    // Set title and description
-    feedObject.title = this.feedConfig.title || feedObject.title;
-    feedObject.description = this.feedConfig.description || feedObject.title;
-
-    return feedObject;
-  }
-}
+      return this;
+    },
+  },
+});
 
 module.exports = Feed;

@@ -6,9 +6,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Nothing yet.
+
+## 0.4.0 - 2018-04-16
+
 ### Changed
 - Improvements to templates.
 - Upgraded to mjml v4.
+- Refactored objects/classes with [Stampit](https://github.com/stampit-org/stampit).
+- Removing `fs` and `path` modules from core library.
+- Reimplemented and documented CLI.
+
+## Removed
+- Webpack/build for frontend as [mjml v4 no longer supports it](https://github.com/mjmlio/mjml/issues/438#issuecomment-302712905).
 
 ## 0.3.0 - 2018-04-13
 
