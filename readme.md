@@ -105,8 +105,6 @@ For an example config file, see `config.example.json`.
 - `outro`: The second to last line of the email. Closes out the main content or allows you to add a call to action.
 - `signature`: Your signature or a final line of the email.
 
-You can store multiple config files in the root of this project, and the `.gitignore` file should ignore them if you follow the naming convention, `config.[NAME].json` where `[NAME]` is your identifying name for the config.
-
 
 ## Contributing
 
