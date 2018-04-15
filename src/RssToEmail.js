@@ -35,6 +35,7 @@ const RssToEmail = stampit({
     async getEmail(format) {
       this.email || await this.generateEmail();
       const methodName = emailFormatToMethodName(format || this.defaultFormat);
+
       return this.email[methodName]();
     },
 
