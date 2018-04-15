@@ -24,54 +24,53 @@ Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS
 
 You can see a sample email generated in the browser live at [portable-cto.github.io/rss-to-email](https://portable-cto.github.io/rss-to-email/).
 
+
 ## Table of Contents
 
-- [Installation](#installation)
 - [Usage](#usage)
   - [Node](#node)
-  - [Command Line](#cli)
+  - [Command Line](#command-line)
   - [Browser](#browser)
-  - [Output](#output)
   - [Configuration](#configuration)
 - [Contributing](#contributing)
 - [License](#license)
 
 
-## Installation
+## Usage
 
-This package is [hosted on npm](https://www.npmjs.com/package/rss-to-email) for your convenience. To install and save it to your project's dependencies, run:
+### Node
+
+The recommended way to use this package is as [an npm package](https://www.npmjs.com/package/rss-to-email). To install and save it to your project's dependencies, run:
 
 ```
 npm install rss-to-email --save
 ```
 
-## Usage
-
-### Node
-
-The recommended way to use this package is as a Node package. After installing the project, instantiate the `RssToEmail` class with a config file or path to a config file:
-
-```javascript 1.8
-
-const RssToEmail = require('rss-to-email');
-
-const rssToEmail = new RssToEmail('config.example.json');
-
-// Generate and save HTML and MJML emails
-rssToEmail.saveEmails();
-
-// Get the HTML text of the email
-const htmlEmail = rssToEmail.getEmail('html');
+After installing, call the `RssToEmail` factory with [a config object](#configuration). Use the resulting `rssToEmail` object to get emails in `mjml` or `html` formats: 
 
 ```
+const RssToEmail = require('rss-to-email');
+const config = {
+  // See #Configuration section of the docs below
+};
+const rssToEmail = RssToEmail(config);
+
+rssToEmail.getEmail('html').then((email) => {
+  console.log(email); // The HTML version of your email
+});
+
+rssToEmail.getEmail('mjml').then((email) => {
+ console.log(email); // The MJML version of your email
+});
+```
+
+### Command Line
+
+Coming soon!
 
 ### Browser
 
-You can also run this library in your browser, but you will need a polyfill for promises and a CORS proxy. A complete example of this method is available in the `index.html` file at the root of this directory.
-
-### Output
-
-Your output files will be in the `output/` directory. You should see both an `.mjml` file and a `.html` file. You can use [mjml's try it live](https://mjml.io/try-it-live) feature to edit the mjml file, or you can put the `.html` file right into your favorite email editor/preview tool.
+Unfortunately [mjml pulled support for browser-side usage](https://github.com/mjmlio/mjml/issues/438#issuecomment-302712905), so you can't use this library in client-side applications. That said, I'd like to come up with a solution for this, perhaps by providing an API or using a different email templating library.
 
 ### Configuration
 
