@@ -46,4 +46,51 @@ describe('Feed', () => {
 
     expect(result.items[0].title).toEqual('test ');
   });
+
+  test('it filters by publishedSince if set', async () => {
+    feedConfig.publishedSince = '2018-01-01';
+    const items = [
+      {
+        title: 'This was published before the cutoff',
+        content: 'test more content',
+        isoDate: '2017-11-12T21:16:39.000Z',
+      },
+      {
+        title: 'This was published after the cutoff',
+        content: 'test more content',
+        isoDate: '2018-02-02T21:16:39.000Z',
+      },
+    ];
+    Parser.mockImplementation(() => ({
+      parseURL: () => ({ title: 'mock title', items }),
+    }));
+
+    const result = await Feed({feedConfig}).resolve();
+
+    expect(result.items[0].title).toEqual('This was published after the cutoff');
+  });
+
+  test('it does not filter by publishedSince if not set', async () => {
+    feedConfig.publishedSince = undefined;
+    const items = [
+      {
+        title: 'This was published before the cutoff',
+        content: 'test more content',
+        isoDate: '2017-11-12T21:16:39.000Z',
+      },
+      {
+        title: 'This was published after the cutoff',
+        content: 'test more content',
+        isoDate: '2018-02-02T21:16:39.000Z',
+      },
+    ];
+    Parser.mockImplementation(() => ({
+      parseURL: () => ({ title: 'mock title', items }),
+    }));
+
+    const result = await Feed({feedConfig}).resolve();
+
+    expect(result.items[1].title).toEqual('This was published after the cutoff');
+    expect(result.items[0].title).toEqual('This was published before the cutoff');
+  });
 });

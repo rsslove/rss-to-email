@@ -42,12 +42,31 @@ const Feed = stampit({
       const feedObject = await this.parser.parseURL(this.config.url);
 
       this.items = feedObject.items.map(item => cleanItem(item));
+      this.applyFilters();
       this.title = this.config.title || feedObject.title;
       this.description = this.config.description || feedObject.description;
       this.url = this.config.url || feedObject.feedUrl;
 
       return this;
     },
+
+    /**
+     * Apply filters to the items in this object
+     * @return {void}
+     */
+    applyFilters() {
+      if (this.items) {
+        this.items = this.items.filter((item) => {
+          // Filter by published since
+          if (this.config.publishedSince) {
+            return new Date(item.isoDate) >= new Date(this.config.publishedSince);
+          }
+
+          return item;
+        });
+      }
+    },
+
   },
 });
 

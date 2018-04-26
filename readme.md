@@ -100,6 +100,7 @@ For an example config file, see `config.example.json`.
 - `intro`: The second line of the email. Serves as an introduction to the main feed content.
 - `feeds`: An array of RSS feeds you'd like to include. Each must have a `url`, but can also have:
   - `description`: A short custom feed description. Will use the RSS feed's embedded one by default.
+  - `publishedSince`: Filter out posts published before this date.
   - `title`: A custom feed title. Will use the RSS feed's embedded one by default.
   - `url`: The url to the RSS feed.
 - `outro`: The second to last line of the email. Closes out the main content or allows you to add a call to action.

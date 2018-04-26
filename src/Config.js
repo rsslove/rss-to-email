@@ -1,6 +1,6 @@
 const stampit = require('stampit');
 
-const DEFAULT_CONFIG_WARNING_MESSAGE = 'No configuration file or object included. Defaults will be used.';
+const DEFAULT_CONFIG_WARNING_MESSAGE = 'No configuration object included.';
 
 const HeaderConfig = stampit({
   props: {
@@ -49,6 +49,7 @@ const DEFAULT_CONFIG_OBJECT = {
   greeting: 'Hey there,',
   intro: 'Thanks for opening the email! Here are some links I want you to check out:',
   feeds: [FeedConfig({
+    publishedSince: undefined,
     description: 'A short custom feed description',
     title: 'A custom feed title',
     url: 'http://www.feedforall.com/sample.xml',
@@ -56,6 +57,15 @@ const DEFAULT_CONFIG_OBJECT = {
   outro: "Thanks for reading. We'll be back next week with more!",
   signature: 'John Smith, CMO at Example Co.',
 };
+
+/**
+ * Determine whether or not a value is null or undefined
+ * @param {any} val
+ * @return {boolean}
+ */
+function isNullOrUndefined(val) {
+  return val === undefined || val === null;
+}
 
 const Config = stampit({
   props: DEFAULT_CONFIG_OBJECT,
@@ -70,7 +80,9 @@ const Config = stampit({
     }
 
     Object.keys(this).forEach((property) => {
-      this[property] = options[property] || DEFAULT_CONFIG_OBJECT[property];
+      this[property] = !isNullOrUndefined(options[property]) ?
+        options[property] :
+        DEFAULT_CONFIG_OBJECT[property];
     });
   },
 });

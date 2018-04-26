@@ -12,12 +12,14 @@
     {
       "description": "A short custom feed description",
       "title": "A custom feed title",
-      "url": "http://www.feedforall.com/sample.xml"
+      "url": "http://www.feedforall.com/sample.xml",
+      "publishedSince": "2018-01-01"
     },
     {
       "description": "A short custom feed description",
       "title": "A custom feed title",
-      "url": "http://www.feedforall.com/sample.xml"
+      "url": "http://www.feedforall.com/sample.xml",
+      "publishedSince": null
     }
   ],
   "outro": "Thanks for reading. We'll be back next week with more!",
