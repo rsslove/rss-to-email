@@ -1,18 +1,19 @@
 const RssToEmail = require('rss-to-email');
+const app = (require('express'))();
+const Webtask = require('webtask-tools');
 
-function getConfig(context) {
-  return context.query || {};
-}
+app.use(require('body-parser').json());
 
-function getFormat(context) {
-  return context && context.query && context.query.format ? context.query.format : 'html';
-}
-
-module.exports = function(context, req, res) {
-  const rssToEmail = RssToEmail(getConfig(context));
-  rssToEmail.getEmail(getFormat(context))
-    .then(email => {
-      res.writeHead(200, { 'Content-Type': 'text/html '});
-      res.end(email);
+app.post('/', (req, res) => {
+  const config = req.body || {};
+  const rssToEmail = RssToEmail(config);
+  rssToEmail.getEmail(config.format || 'html')
+  .then(email => {
+    res.writeHead(200, {
+      'Content-Type': 'text/html ',
     });
-};
+    res.end(email);
+  });
+});
+
+module.exports = Webtask.fromExpress(app);

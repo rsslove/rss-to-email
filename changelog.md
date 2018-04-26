@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
+- Nothing yet.
+
+## 0.5.0 - 2018-04-25
+
+### Added
 - [Webtask](https://webtask.io/) to allow deployment as a serverless endpoint.
 - `publishedSince` option on each RSS feed.
 

@@ -84,7 +84,7 @@ rss-to-email ./config.json ./output
 
 ### Browser
 
-Unfortunately [mjml pulled support for browser-side usage](https://github.com/mjmlio/mjml/issues/438#issuecomment-302712905), so you can't use this library in client-side applications. That said, I'd like to come up with a solution for this, perhaps by providing an API or using a different email templating library.
+Unfortunately [mjml pulled support for browser-side usage](https://github.com/mjmlio/mjml/issues/438#issuecomment-302712905), so you can't use this library in client-side applications. You can, however, [deploy this project as a serverless endpoint using Auth0's Webtasks](webtask/readme.md). 
 
 ### Configuration
 
