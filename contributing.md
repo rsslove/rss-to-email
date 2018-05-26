@@ -10,8 +10,8 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 In order to do local development on this project, you'll need to be running:
 
-- [Node 7.10+](https://nodejs.org/)
-- [npm 4.2+](https://www.npmjs.com/)
+- [Node 8.0+](https://nodejs.org/)
+- [npm 5.0+](https://www.npmjs.com/)
 
 ### Installation
 
