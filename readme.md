@@ -103,7 +103,7 @@ For an example config file, see `config.example.json`.
   - `title`: A custom feed title. Will use the RSS feed's embedded one by default.
   - `url`: The url to the RSS feed.
 - `outro`: The last line of the email. Can use HTML or plain text.
-- `templateUrl`: (optional) A handlebars/mjml template. Defaults to [this file](https://raw.githubusercontent.com/portable-cto/rss-to-email/515f29889ab8e36a483f209356402564b269674e/src/templates/default.mjml).
+- `templateUrl`: (optional) A handlebars/mjml template. Defaults to [this file](https://raw.githubusercontent.com/portable-cto/rss-to-email/master/src/templates/default.mjml).
 
 
 ## Contributing

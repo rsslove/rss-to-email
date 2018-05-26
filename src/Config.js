@@ -1,7 +1,7 @@
 const stampit = require('stampit');
 
 const DEFAULT_CONFIG_WARNING_MESSAGE = 'No configuration object included.';
-const DEFAULT_TEMPLATE_URL = 'https://raw.githubusercontent.com/portable-cto/rss-to-email/515f29889ab8e36a483f209356402564b269674e/src/templates/default.mjml';
+const DEFAULT_TEMPLATE_URL = 'https://raw.githubusercontent.com/portable-cto/rss-to-email/master/src/templates/default.mjml';
 
 const HeaderConfig = stampit({
   props: {
