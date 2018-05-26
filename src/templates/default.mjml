@@ -1,0 +1,69 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-all font-size="16px" color="dimgray" font-family="Helvetica" align="left" />
+      <mj-body background-color="#ffffff"></mj-body>
+      <mj-section padding="10px 10px 0"></mj-section>
+      <mj-text padding="5px 15px" line-height="22px"></mj-text>
+      <mj-divider padding="10px 15px" border-width="1px" border-style="dashed" border-color="lightgrey"></mj-divider>
+    </mj-attributes>
+    <mj-style inline="inline">
+      a {
+        color: {{accentColor}};
+        text-decoration: underline;
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body>
+    <!-- Header -->
+    <mj-section>
+      <mj-column>
+        {{#if header.banner}}
+        <mj-image href="{{header.link}}" align="center" src="{{header.banner}}" alt="{{header.title}}"></mj-image>
+        {{else}}
+        <mj-text color="{{accentColor}}" padding="30px 0 40px" align="center" font-size="24px">
+          <a href="{{header.link}}">{{header.title}}</a>
+        </mj-text>
+        {{/if}}
+      </mj-column>
+    </mj-section>
+
+    <!-- Intro -->
+    <mj-section>
+      <mj-column>
+        <mj-text padding-top="20px" padding-bottom="20px">{{{intro}}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    {{#each feeds}}
+      <!-- Feed Divider -->
+      <mj-section>
+        <mj-column>
+          <mj-text font-size="24px" padding-top="20px">{{this.title}}</mj-text>
+          <mj-text padding-bottom="20px">{{this.description}}</mj-text>
+        </mj-column>
+      </mj-section>
+
+      {{#each items}}
+        <!-- Entry -->
+        <mj-section>
+          <mj-column>
+            <mj-text>
+              <a href="{{this.link}}">{{this.title}}</a>
+            </mj-text>
+            <mj-text>{{this.content}}</mj-text>
+            <mj-divider></mj-divider>
+          </mj-column>
+        </mj-section>
+      {{/each}}
+
+    {{/each}}
+
+    <!-- Outro -->
+    <mj-section>
+      <mj-column>
+        <mj-text padding-bottom="20px">{{{outro}}}</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Nothing yet.
 
+## 0.6.0 - 2018-05-26
+
+### Added
+- Custom templates using Handlebars/MJML.
+
+### Changed
+- Node versions supported to 8, 9, and 10. No longer supporting Node <7.
+
+### Removed
+- `signature` and `greeting` fields. Should now consolidate and use `intro` and `outro` only.
+
 ## 0.5.0 - 2018-04-25
 
 ### Added
@@ -28,7 +39,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Removing `fs` and `path` modules from core library.
 - Reimplemented and documented CLI.
 
-## Removed
+### Removed
 - Webpack/build for frontend as [mjml v4 no longer supports it](https://github.com/mjmlio/mjml/issues/438#issuecomment-302712905).
 
 ## 0.3.0 - 2018-04-13

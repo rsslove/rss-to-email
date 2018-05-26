@@ -1,12 +1,16 @@
-const head = require('./templates/head');
-const header = require('./templates/header');
-const intro = require('./templates/intro');
-const entry = require('./templates/entry');
-const entryDivider = require('./templates/entry-divider');
-const outro = require('./templates/outro');
-const foot = require('./templates/foot');
 const mjmlLib = require('mjml');
 const stampit = require('stampit');
+const fetch = require('node-fetch');
+const handlebars = require('handlebars');
+
+/**
+ * Fetch the template file from a URL
+ * @param {string} url
+ * @return {Promise<string>}
+ */
+function getTemplateFile(url) {
+  return fetch(url).then(res => res.text()).then(res => res);
+}
 
 const Email = stampit({
   props: {
@@ -30,29 +34,12 @@ const Email = stampit({
      * Generate mjmlContent from the config and feeds set in the constructor
      * @returns {Email}
      */
-    generate() {
-      // Initialize the template
-      this.mjmlContent = head(this.config);
+    async generate() {
+      const source = await getTemplateFile(this.config.templateUrl);
 
-      // Add header
-      this.mjmlContent += header(this.config);
+      const template = handlebars.compile(source);
 
-      // Add intro
-      this.mjmlContent += intro(this.config);
-
-      // Add each feed's item to the email
-      this.feeds.forEach((feed) => {
-        this.mjmlContent += entryDivider(feed);
-        feed.items.forEach((item) => {
-          this.mjmlContent += entry(item);
-        });
-      });
-
-      // Add outro
-      this.mjmlContent += outro(this.config);
-
-      // Close template
-      this.mjmlContent += foot(this.config);
+      this.mjmlContent = template({ ...this.config, feeds: this.feeds });
 
       return this;
     },
@@ -61,8 +48,8 @@ const Email = stampit({
      * Get the MJML email as a string.
      * @return {string}
      */
-    getMjml() {
-      this.mjmlContent || this.generate();
+    async getMjml() {
+      this.mjmlContent || await this.generate();
 
       return this.mjmlContent;
     },
@@ -71,8 +58,8 @@ const Email = stampit({
      * Get the HTML email as a string.
      * @return {string}
      */
-    getHtml() {
-      return mjmlLib(this.getMjml()).html;
+    async getHtml() {
+      return mjmlLib(await this.getMjml()).html;
     },
   },
 });
