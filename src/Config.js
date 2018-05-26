@@ -1,6 +1,7 @@
 const stampit = require('stampit');
 
 const DEFAULT_CONFIG_WARNING_MESSAGE = 'No configuration object included.';
+const DEFAULT_TEMPLATE_URL = 'https://gist.githubusercontent.com/karllhughes/060a9fb8d10dd06909133ddd676fa4cc/raw/491c0d6d519b74edb5b259a147e895d21a25d22d/rss-to-email-default-template.mjml';
 
 const HeaderConfig = stampit({
   props: {
@@ -46,16 +47,15 @@ const DEFAULT_CONFIG_OBJECT = {
     title: 'A custom feed title',
     url: 'http://www.feedforall.com/sample.xml',
   }),
-  greeting: 'Hey there,',
-  intro: 'Thanks for opening the email! Here are some links I want you to check out:',
+  intro: 'Hey there,<br/><br/>Thanks for opening the email! Here are some links I want you to check out:',
   feeds: [FeedConfig({
     publishedSince: undefined,
     description: 'A short custom feed description',
     title: 'A custom feed title',
     url: 'http://www.feedforall.com/sample.xml',
   })],
-  outro: "Thanks for reading. We'll be back next week with more!",
-  signature: 'John Smith, CMO at Example Co.',
+  outro: "Thanks for reading. We'll be back next week with more!<br/><br/>John Smith, CMO at Example Co.",
+  templateUrl: DEFAULT_TEMPLATE_URL,
 };
 
 /**
