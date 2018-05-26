@@ -1,20 +1,10 @@
 const Email = require('../../src/Email');
-const head = require('../../src/templates/head');
-const header = require('../../src/templates/header');
-const intro = require('../../src/templates/intro');
-const entry = require('../../src/templates/entry');
-const entryDivider = require('../../src/templates/entry-divider');
-const outro = require('../../src/templates/outro');
-const foot = require('../../src/templates/foot');
 const mjmlLib = require('mjml');
-jest.mock('../../src/templates/head');
-jest.mock('../../src/templates/header');
-jest.mock('../../src/templates/intro');
-jest.mock('../../src/templates/entry');
-jest.mock('../../src/templates/entry-divider');
-jest.mock('../../src/templates/outro');
-jest.mock('../../src/templates/foot');
+const fetch = require('node-fetch');
+const handlebars = require('handlebars');
 jest.mock('mjml');
+jest.mock('node-fetch');
+jest.mock('handlebars');
 
 describe('Email', () => {
   let email;
@@ -22,16 +12,10 @@ describe('Email', () => {
   let feeds;
 
   beforeEach(() => {
-    head.mockClear();
-    header.mockClear();
-    intro.mockClear();
-    entry.mockClear();
-    entryDivider.mockClear();
-    outro.mockClear();
-    foot.mockClear();
     mjmlLib.mockClear();
+    fetch.mockClear();
 
-    config = {};
+    config = {templateUrl: 'http://www.example.com'};
     feeds = [{items: [{title: 'test title'}]}];
     email = new Email({config, feeds});
   });
@@ -41,43 +25,33 @@ describe('Email', () => {
     expect(email.feeds).toEqual(feeds);
   });
 
-  test('get mjml when mjml content is set', () => {
+  test('get mjml when mjml content is set', async() => {
     email.mjmlContent = '<mjml></mjml>';
 
-    const result = email.getMjml();
+    const result = await email.getMjml();
 
     expect(result).toEqual('<mjml></mjml>');
   });
 
-  test('get mjml when mjml content is not set', () => {
-    head.mockImplementation(() => '<mjml>');
-    header.mockImplementation(() => '');
-    intro.mockImplementation(() => '');
-    entry.mockImplementation(() => '');
-    entryDivider.mockImplementation(() => '');
-    outro.mockImplementation(() => '');
-    foot.mockImplementation(() => '</mjml>');
+  test('get mjml when mjml content is not set', async() => {
+    const mjmlContent = '<mjml></mjml>';
+    fetch.mockImplementation(() => Promise.resolve({text: () => Promise.resolve(mjmlContent)}));
+    handlebars.compile.mockImplementation(() => () => mjmlContent);
 
-    const result = email.getMjml();
+    const result = await email.getMjml();
 
+    expect(fetch).toHaveBeenCalledWith(config.templateUrl);
     expect(result).toContain('<mjml>');
     expect(result).toContain('</mjml>');
-    expect(head).toHaveBeenCalledWith(config);
-    expect(header).toHaveBeenCalledWith(config);
-    expect(intro).toHaveBeenCalledWith(config);
-    expect(entry).toHaveBeenCalledTimes(feeds[0].items.length);
-    expect(entryDivider).toHaveBeenCalledTimes(feeds[0].items.length);
-    expect(outro).toHaveBeenCalledWith(config);
-    expect(foot).toHaveBeenCalledWith(config);
   });
 
-  test('get html when mjml content is set', () => {
+  test('get html when mjml content is set', async() => {
     const html = '<!doctype html>';
     const mjmlContent = '<mjml></mjml>';
     email.mjmlContent = mjmlContent;
     mjmlLib.mockImplementation(() => ({html}));
 
-    const result = email.getHtml();
+    const result = await email.getHtml();
 
     expect(result).toEqual(html);
     expect(mjmlLib).toHaveBeenCalledWith(mjmlContent);

@@ -28,7 +28,7 @@ describe('Config', () => {
     expect(config.accentColor).toEqual(input.accentColor);
     expect(config.header).toEqual(input.header);
     expect(config.feeds).toEqual(input.feeds);
-    expect(config.outro).toEqual("Thanks for reading. We'll be back next week with more!");
+    expect(config.outro).toEqual("Thanks for reading. We'll be back next week with more!<br/><br/>John Smith, CMO at Example Co.");
   });
 
   test('config does not replace empty strings', () => {

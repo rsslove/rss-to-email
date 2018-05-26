@@ -3,8 +3,13 @@ const stampit = require('stampit');
 const fetch = require('node-fetch');
 const handlebars = require('handlebars');
 
-async function getTemplateFile(url) {
-  return await fetch(url).then(res => res.text()).then(res => res);
+/**
+ * Fetch the template file from a URL
+ * @param {string} url
+ * @return {Promise<string>}
+ */
+function getTemplateFile(url) {
+  return fetch(url).then(res => res.text()).then(res => res);
 }
 
 const Email = stampit({
@@ -34,7 +39,7 @@ const Email = stampit({
 
       const template = handlebars.compile(source);
 
-      this.mjmlContent = template({...this.config, feeds: this.feeds});
+      this.mjmlContent = template({ ...this.config, feeds: this.feeds });
 
       return this;
     },
