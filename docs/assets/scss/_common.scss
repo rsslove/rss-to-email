@@ -1,0 +1,133 @@
+/* ===========
+   Common
+ =============*/
+
+body {
+  background: $light5;
+  margin: 0;
+  color: #4c5667;
+  overflow-x: hidden !important;
+  padding-bottom: 65px;
+}
+
+html {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100%;
+  background: $light5;
+}
+
+h1 {
+  line-height: 43px;
+}
+
+h2 {
+  line-height: 35px;
+}
+
+h3 {
+  line-height: 30px;
+  small {
+    color: $lightdark4;
+  }
+}
+
+h4 {
+  line-height: 22px;
+  small {
+    color: $lightdark4;
+  }
+}
+
+h5 {
+  small {
+    color: $lightdark4;
+  }
+}
+
+* {
+  outline: none !important;
+}
+
+a {
+  &:hover {
+    outline: 0;
+    text-decoration: none;
+  }
+  &:active {
+    outline: 0;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+.container-alt {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.footer {
+  background-color: $white;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  bottom: 0;
+  color: #58666e;
+  text-align: left !important;
+  padding: 20px 30px;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+#wrapper {
+  height: $height;
+  overflow: hidden;
+  width: $width;
+}
+
+.page {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.card-box {
+  padding: 20px;
+  border: 1px solid rgba(54, 64, 74, .08);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  background-clip: padding-box;
+  margin-bottom: 20px;
+  background-color: $white;
+}
+
+.header-title {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.social-links {
+  li {
+    a {
+      -webkit-border-radius: 50%;
+      background: #EFF0F4;
+      border-radius: 50%;
+      color: #7A7676;
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      width: 30px;
+    }
+  }
+}

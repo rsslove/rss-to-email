@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Minton - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+        <script src="assets/js/modernizr.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container-fluid">
+
+                    <!-- Logo container-->
+                    <div class="logo">
+                        <!-- Text Logo -->
+                        <a href="index.html" class="logo">
+                            <span class="logo-small"><i class="mdi mdi-radar"></i></span>
+                            <span class="logo-large"><i class="mdi mdi-radar"></i> Minton</span>
+                        </a>
+                        <!-- Image Logo -->
+                        <!--<a href="index.html" class="logo">-->
+                        <!--<img src="assets/images/logo_dark.png" alt="" height="24" class="logo-lg">-->
+                        <!--<img src="assets/images/logo_sm.png" alt="" height="24" class="logo-sm">-->
+                        <!--</a>-->
+
+                    </div>
+                    <!-- End Logo container-->
+
+
+                    <div class="menu-extras topbar-custom">
+
+                        <ul class="list-inline float-right mb-0">
+
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link dropdown-toggle waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
+                                   aria-haspopup="false" aria-expanded="false">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
+                                    <!-- item-->
+                                    <div class="dropdown-item noti-title">
+                                        <h5 class="text-overflow"><small class="text-white">Welcome ! John</small> </h5>
+                                    </div>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-account"></i> <span>Profile</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-settings"></i> <span>Settings</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-lock-open"></i> <span>Lock Screen</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-logout"></i> <span>Logout</span>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- end menu-extras -->
+
+                    <div class="clearfix"></div>
+
+                </div> <!-- end container -->
+            </div>
+            <!-- end topbar-main -->
+
+        </header>
+        <!-- End Navigation Bar-->
+
+        <div class="wrapper">
+            <div class="container-fluid">
+
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <h1 class="page-title">Create New Email</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title end breadcrumb -->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card-box">
+                            <h4 class="m-t-0 header-title">Input Types</h4>
+                            <p class="text-muted m-b-30 font-14">
+                                Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.
+                            </p>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="p-20">
+                                        <form class="form-horizontal" role="form">
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Text</label>
+                                                <div class="col-10">
+                                                    <input type="text" class="form-control" value="Some text value...">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label" for="example-email">Email</label>
+                                                <div class="col-10">
+                                                    <input type="email" id="example-email" name="example-email" class="form-control" placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Password</label>
+                                                <div class="col-10">
+                                                    <input type="password" class="form-control" value="password">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Placeholder</label>
+                                                <div class="col-10">
+                                                    <input type="text" class="form-control" placeholder="placeholder">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Text area</label>
+                                                <div class="col-10">
+                                                    <textarea class="form-control" rows="5"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Readonly</label>
+                                                <div class="col-10">
+                                                    <input type="text" class="form-control" readonly="" value="Readonly value">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Disabled</label>
+                                                <div class="col-10">
+                                                    <input type="text" class="form-control" disabled="" value="Disabled value">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Static control</label>
+                                                <div class="col-10">
+                                                    <p class="form-control-static">email@example.com</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Helping text</label>
+                                                <div class="col-10">
+                                                    <input type="text" class="form-control" placeholder="Helping text">
+                                                    <span class="help-block"><small>A block of help text that breaks onto a new line and may extend beyond one line.</small></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Input Select</label>
+                                                <div class="col-10">
+                                                    <select class="form-control">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                    <h6>Multiple select</h6>
+                                                    <select multiple class="form-control">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Default file input</label>
+                                                <div class="col-10">
+                                                    <input type="file" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Date</label>
+                                                <div class="col-10">
+                                                    <input class="form-control" type="date" name="date">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Month</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="month" name="month">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Time</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="time" name="time">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Week</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="week" name="week">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Number</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="number" name="number">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">URL</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="url" name="url">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Search</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="search" name="search">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Tel</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="tel" name="tel">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Color</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="color" name="color">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Range</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="range" name="range" min="0" max="10">
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- end row -->
+
+                        </div> <!-- end card-box -->
+                    </div><!-- end col -->
+
+                    <div class="col-md-6">
+                        <div class="card-box">
+                            <h4 class="m-t-0 header-title">Preview</h4>
+
+                        </div> <!-- end card-box -->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- end container -->
+        </div>
+        <!-- end wrapper -->
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        2016 - 2018 © Minton - Coderthemes.com
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap --><!-- Tether for Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+    </body>
+</html>
