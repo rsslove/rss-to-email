@@ -20,7 +20,7 @@
               Title<span class="text-danger">*</span>
             </label>
             <div class="col-10">
-              <input name="title" type="text" class="form-control" placeholder="The name of your newsletter"
+              <input name="header_title" type="text" class="form-control" placeholder="The name of your newsletter"
                      required>
             </div>
           </div>
@@ -29,7 +29,7 @@
               Feed URL<span class="text-danger">*</span>
             </label>
             <div class="col-9">
-              <input type="url" class="form-control" placeholder="The URL of your RSS feed" required>
+              <input name="feed_url" type="url" class="form-control" placeholder="The URL of your RSS feed" required>
             </div>
           </div>
           <div class="form-group row">
@@ -61,19 +61,19 @@
                 Accent Color
               </label>
               <div class="col-9">
-                <input type="text" class="form-control" placeholder="A web-safe hex code like #F39C12">
+                <input name="accentColor" type="text" class="form-control" placeholder="A web-safe hex code like #F39C12">
               </div>
             </div>
             <div class="form-group row">
               <label class="col-3 col-form-label">Logo URL</label>
               <div class="col-9">
-                <input type="url" class="form-control" placeholder="Will be shown at the top of email">
+                <input name="header_link" type="url" class="form-control" placeholder="Will be shown at the top of email">
               </div>
             </div>
             <div class="form-group row">
               <label class="col-3 col-form-label">Site URL</label>
               <div class="col-9">
-                <input type="url" class="form-control" placeholder="The logo or title will link to this site">
+                <input name="header_banner" type="url" class="form-control" placeholder="The logo or title will link to this site">
               </div>
             </div>
             <div class="form-group row">
@@ -100,7 +100,7 @@
                 Intro
               </label>
               <div class="col-10">
-                <input type="text" class="form-control" placeholder="An introductory message for your email">
+                <input name="intro" type="text" class="form-control" placeholder="An introductory message for your email">
               </div>
             </div>
             <div class="form-group row">
@@ -108,7 +108,7 @@
                 Outro
               </label>
               <div class="col-10">
-                <input type="text" class="form-control" placeholder="A final closing statement or sign-off">
+                <input name="outro" type="text" class="form-control" placeholder="A final closing statement or sign-off">
               </div>
             </div>
 
@@ -116,6 +116,7 @@
 
           <div class="form-group row">
             <div class="col-12">
+              <input type="hidden" name="format" value="html">
               <button type="submit" class="btn btn-success btn-block btn-lg">Submit!</button>
             </div>
           </div>
