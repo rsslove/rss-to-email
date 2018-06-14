@@ -6,7 +6,7 @@
     </div>
     <div class="text-justify mb-3">
       <p class="text-muted">
-        RSS-To-Email is a free and <a href="https://github.com/portable-cto/rss-to-email" target="_blank">open
+        RSS-To-Email is a free and <a href="{{ site.github }}" target="_blank">open
         source</a> tool created by <a href="https://www.portablecto.com/" target="_blank">Portable CTO</a> to make
         email newsletter generation easier.
       </p>
@@ -23,8 +23,12 @@
       </p>
     </div>
     <div class="text-center">
-      <button type="button" class="btn btn-success waves-effect waves-light m-t-10">Request Premium Access</button>
-      <button type="button" class="btn btn-primary waves-effect waves-light m-t-10">Report an Issue</button>
+      <button type="button" data-toggle="modal" data-target="#CenterModal"
+              class="modal-activator btn btn-success waves-effect waves-light m-t-10"
+              data-feature="about">
+        Request Premium Access
+      </button>
+      <a class="btn btn-primary m-t-10" href="{{ site.github }}/issues">Report an Issue</a>
     </div>
   </div><!-- end col -->
 </div>

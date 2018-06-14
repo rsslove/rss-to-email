@@ -38,7 +38,10 @@
             </div>
             <div class="col-8">
               <p class="text-muted small">
-                Multiple feeds only available to premium users. <a href="#" data-toggle="modal" data-target="#CenterModal">Request premium access</a>.
+                Multiple feeds only available to premium users.
+                <a href="#" class="modal-activator"
+                   data-feature="multiple-feeds" data-toggle="modal"
+                   data-target="#CenterModal">Request premium access</a>.
               </p>
             </div>
           </div>
@@ -61,19 +64,22 @@
                 Accent Color
               </label>
               <div class="col-9">
-                <input name="accentColor" type="text" class="form-control" placeholder="A web-safe hex code like #F39C12">
+                <input name="accentColor" type="text" class="form-control"
+                       placeholder="A web-safe hex code like #F39C12">
               </div>
             </div>
             <div class="form-group row">
               <label class="col-3 col-form-label">Logo URL</label>
               <div class="col-9">
-                <input name="header_link" type="url" class="form-control" placeholder="Will be shown at the top of email">
+                <input name="header_link" type="url" class="form-control"
+                       placeholder="Will be shown at the top of email">
               </div>
             </div>
             <div class="form-group row">
               <label class="col-3 col-form-label">Site URL</label>
               <div class="col-9">
-                <input name="header_banner" type="url" class="form-control" placeholder="The logo or title will link to this site">
+                <input name="header_banner" type="url" class="form-control"
+                       placeholder="The logo or title will link to this site">
               </div>
             </div>
             <div class="form-group row">
@@ -84,8 +90,11 @@
                 <input disabled type="url" class="form-control"
                        placeholder="https://raw.githubusercontent.com/portable-cto/rss-to-email/master/src/templates/default.mjml">
                 <p class="mt-1 text-muted small">
-                  Custom templates only available to premium users. <a href="#premium" data-toggle="modal" data-target="#CenterModal">Request premium
-                  access</a>.
+                  Custom templates only available to premium users.
+                  <a href="#premium" data-toggle="modal"
+                     class="modal-activator" data-feature="custom-templates"
+                     data-target="#CenterModal">Request premium
+                    access</a>.
                 </p>
               </div>
             </div>
@@ -100,7 +109,8 @@
                 Intro
               </label>
               <div class="col-10">
-                <input name="intro" type="text" class="form-control" placeholder="An introductory message for your email">
+                <input name="intro" type="text" class="form-control"
+                       placeholder="An introductory message for your email">
               </div>
             </div>
             <div class="form-group row">
@@ -108,7 +118,8 @@
                 Outro
               </label>
               <div class="col-10">
-                <input name="outro" type="text" class="form-control" placeholder="A final closing statement or sign-off">
+                <input name="outro" type="text" class="form-control"
+                       placeholder="A final closing statement or sign-off">
               </div>
             </div>
 
