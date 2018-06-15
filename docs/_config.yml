@@ -4,3 +4,9 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: ""
 url: "https://email.pcto.co"
 github: "https://github.com/portable-cto/rss-to-email"
+twitter:
+  username: portablecto
+  card: summary
+logo: /assets/images/logo.png
+plugins:
+  - jekyll-seo-tag
