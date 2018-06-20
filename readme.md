@@ -84,7 +84,7 @@ rss-to-email ./config.json ./output
 
 ### Browser
 
-Unfortunately [mjml pulled support for browser-side usage](https://github.com/mjmlio/mjml/issues/438#issuecomment-302712905), so you can't use this library in client-side applications. You can, however, [deploy this project as a serverless endpoint using Auth0's Webtasks](webtask/refadme.md). 
+You can access a limited set of functionality from this library in your browser at [email.pcto.co](https://email.pcto.co/). Because [mjml pulled support for browser-side usage](https://github.com/mjmlio/mjml/issues/438#issuecomment-302712905), you can't use this library in pure client-side applications, but we have [deployed this project as a serverless endpoint using Auth0's Webtasks](webtask/readme.md) and hosted a simple frontend on Github Pages to let non-technical people see how the software works and access some of its functionality.
 
 ### Configuration
 
