@@ -2,7 +2,7 @@ title: RSS-To-Email
 description: > # this means to ignore newlines until "baseurl:"
   Turn your RSS feed into a beautiful email newsletter
 baseurl: ""
-url: "https://email.pcto.co"
+url: "https://rss-to-email.portablecto.com"
 github: "https://github.com/portable-cto/rss-to-email"
 twitter:
   username: portablecto
