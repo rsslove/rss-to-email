@@ -101,6 +101,7 @@ For an example config file, see `config.example.json`.
   - `url`: The url to the RSS feed.
   - `title`: (optional) A custom feed title. Will use the RSS feed's embedded one by default.
   - `description`: (optional) A short custom feed description. Will use the RSS feed's embedded one by default.
+  - `limit`: (optional) Truncate items greater than a given limit.
   - `publishedSince`: (optional) Filter out posts published before this date.
   - `parserOptions`: (optional) Custom RSS parser options outlined in the Node [rss-parser](https://www.npmjs.com/package/rss-parser#xml-options) documentation.
 - `outro`: The last line of the email. Can use HTML or plain text.

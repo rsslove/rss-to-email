@@ -56,14 +56,16 @@ const Feed = stampit({
      */
     applyFilters() {
       if (this.items) {
-        this.items = this.items.filter((item) => {
-          // Filter by published since
-          if (this.config.publishedSince) {
-            return new Date(item.isoDate) >= new Date(this.config.publishedSince);
-          }
+        // Filter by published since
+        if (this.config.publishedSince) {
+          this.items = this.items
+            .filter(item => new Date(item.isoDate) >= new Date(this.config.publishedSince));
+        }
 
-          return item;
-        });
+        // Apply limit
+        if (this.config.limit) {
+          this.items = this.items.slice(0, this.config.limit);
+        }
       }
     },
 
