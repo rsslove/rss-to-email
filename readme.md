@@ -97,11 +97,12 @@ For an example config file, see `config.example.json`.
   - `link`: A link for the header image or text.
   - `title`: Shown if the banner is not set or as an `alt` tag on the image.
 - `intro`: The first line of the email. Can use HTML or plain text.
-- `feeds`: An array of RSS feeds you'd like to include. Each must have a `url`, but can also have:
-  - `description`: A short custom feed description. Will use the RSS feed's embedded one by default.
-  - `publishedSince`: Filter out posts published before this date.
-  - `title`: A custom feed title. Will use the RSS feed's embedded one by default.
+- `feeds`: An array of RSS feeds you'd like to include. Only `url` is required:
   - `url`: The url to the RSS feed.
+  - `title`: (optional) A custom feed title. Will use the RSS feed's embedded one by default.
+  - `description`: (optional) A short custom feed description. Will use the RSS feed's embedded one by default.
+  - `publishedSince`: (optional) Filter out posts published before this date.
+  - `parserOptions`: (optional) Custom RSS parser options outlined in the Node [rss-parser](https://www.npmjs.com/package/rss-parser#xml-options) documentation.
 - `outro`: The last line of the email. Can use HTML or plain text.
 - `templateUrl`: (optional) A handlebars/mjml template. Defaults to [this file](https://raw.githubusercontent.com/portable-cto/rss-to-email/master/src/templates/default.mjml).
 

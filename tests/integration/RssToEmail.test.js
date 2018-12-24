@@ -10,11 +10,12 @@ describe('RssToEmail - Integration', () => {
       accentColor: 'blue',
       feeds: [
         {
-          description: 'A test feed description',
-          title: 'A test feed title',
-          url: 'http://www.feedforall.com/sample.xml',
-        }
-      ]
+          description: 'A feed with custom namespace fields',
+          title: 'A custom field test',
+          url: 'https://abcnews.go.com/abcnews/topstories',
+          parserOptions: {customFields: {item: ['media:keywords']}},
+        },
+      ],
     };
     subject = RssToEmail(config);
   });
@@ -68,6 +69,7 @@ describe('RssToEmail - Integration', () => {
 
   test('can generate and get email in default format when email not yet set', async () => {
     const result = await subject.getEmail('html');
+    console.log(result);
 
     expect(result).toBeDefined();
   });

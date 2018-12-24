@@ -52,6 +52,7 @@
               <a href="{{this.link}}">{{this.title}}</a>
             </mj-text>
             <mj-text>{{{this.content}}}</mj-text>
+            <mj-text>{{ this['media:keywords'] }}</mj-text>
             <mj-divider></mj-divider>
           </mj-column>
         </mj-section>
