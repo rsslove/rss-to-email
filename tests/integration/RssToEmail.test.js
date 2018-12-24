@@ -69,7 +69,6 @@ describe('RssToEmail - Integration', () => {
 
   test('can generate and get email in default format when email not yet set', async () => {
     const result = await subject.getEmail('html');
-    console.log(result);
 
     expect(result).toBeDefined();
   });
