@@ -7,13 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
-- Docs folder with frontend demo using Jekyll.
+- Nothing yet
 
 ### Fixed
-- Allowing HTML in content for each item in rss template.
+- Nothing yet
 
 ### Removed
-- `/webtask` directory from NPM package.
+- Nothing yet
+
+## 0.8.0 - 2018-12-23
+
+### Added
+- Optional `limit` paramter to truncate number of items in each feed.
 
 ## 0.7.0 - 2018-12-23
 
