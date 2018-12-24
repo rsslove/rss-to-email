@@ -93,4 +93,21 @@ describe('Feed', () => {
     expect(result.items[1].title).toEqual('This was published after the cutoff');
     expect(result.items[0].title).toEqual('This was published before the cutoff');
   });
+
+  test('it limits feed items when limit specified', async () => {
+    feedConfig.limit = 3;
+    const items = [
+      { title: 'test http://www.example.com/', content: 'test more content' },
+      { title: 'test http://www.example.com/', content: 'test more content' },
+      { title: 'test http://www.example.com/', content: 'test more content' },
+      { title: 'test http://www.example.com/', content: 'test more content' },
+    ];
+    Parser.mockImplementation(() => ({
+      parseURL: () => ({ title: 'mock title', items }),
+    }));
+
+    const result = await Feed({feedConfig}).resolve();
+
+    expect(result.items.length).toEqual(feedConfig.limit);
+  });
 });
