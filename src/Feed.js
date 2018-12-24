@@ -30,7 +30,7 @@ const Feed = stampit({
    */
   init({ feedConfig }) {
     this.config = feedConfig;
-    this.parser = new Parser();
+    this.parser = new Parser(feedConfig.parserOptions || {});
   },
 
   methods: {
