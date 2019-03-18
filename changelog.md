@@ -15,6 +15,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - Nothing yet
 
+## 0.9.0 - 2019-03-17
+
+### Added
+- Template support for all [handlebars-helpers](https://github.com/helpers/handlebars-helpers).
+- Documentation for templates.
+
+### Fixed
+- Updated NPM dependencies.
+
 ## 0.8.0 - 2018-12-23
 
 ### Added

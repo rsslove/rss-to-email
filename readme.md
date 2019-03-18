@@ -30,6 +30,7 @@ Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS
   - [Command Line](#command-line)
   - [Browser](#browser)
   - [Configuration](#configuration)
+  - [Templates](#templates)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -105,8 +106,49 @@ For an example config file, see `config.example.json`.
   - `publishedSince`: (optional) Filter out posts published before this date.
   - `parserOptions`: (optional) Custom RSS parser options outlined in the Node [rss-parser](https://www.npmjs.com/package/rss-parser#xml-options) documentation.
 - `outro`: The last line of the email. Can use HTML or plain text.
-- `templateUrl`: (optional) A handlebars/mjml template. Defaults to [this file](https://raw.githubusercontent.com/portable-cto/rss-to-email/master/src/templates/default.mjml).
+- `templateUrl`: (optional) A handlebars/mjml template. For more details, see [Templates](#templates) section.
 
+### Templates
+In order to compose custom emails, you can build your own [MJML templates](https://mjml.io/) with [Handlebars](). If you don't specify a template URL, the library defaults to [this file](https://raw.githubusercontent.com/portable-cto/rss-to-email/master/src/templates/default.mjml).
+
+Many of the config file's variables are exposed in the templates including:
+
+- `header`
+- `intro`
+- `outro`
+
+The `feeds` variable contains an array of all of the feeds with an array of all of the items in each. For example, the following is a basic template that will loop through all the RSS feeds and items, displaying the title and content of each:
+
+```html
+{{#each feeds}}
+  <!-- Feed -->
+  <mj-section>
+    <mj-column>
+      <mj-text>{{this.title}}</mj-text>
+      <mj-text>{{this.description}}</mj-text>
+    </mj-column>
+  </mj-section>
+  {{#each items}}
+    <!-- Item -->
+    <mj-section>
+      <mj-column>
+        <mj-text>
+          <a href="{{this.link}}">{{this.title}}</a>
+        </mj-text>
+        <mj-text>{{{this.content}}}</mj-text>
+      </mj-column>
+    </mj-section>
+  {{/each}}
+{{/each}}
+```
+
+You can also use any helper in the [handlebars-helpers](https://github.com/helpers/handlebars-helpers) library:
+
+```html
+{{#is intro "A certain intro"}}
+  <p>A certain intro was used.</p>
+{{/is}}
+```
 
 ## Contributing
 
