@@ -1,7 +1,7 @@
+const stampit = require('stampit');
 const Config = require('./Config');
 const Feed = require('./Feed');
 const Email = require('./Email');
-const stampit = require('stampit');
 
 /**
  * Capitalize the first letter in a string

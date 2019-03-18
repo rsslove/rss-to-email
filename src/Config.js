@@ -80,9 +80,9 @@ const Config = stampit({
     }
 
     Object.keys(this).forEach((property) => {
-      this[property] = !isNullOrUndefined(options[property]) ?
-        options[property] :
-        DEFAULT_CONFIG_OBJECT[property];
+      this[property] = !isNullOrUndefined(options[property])
+        ? options[property]
+        : DEFAULT_CONFIG_OBJECT[property];
     });
   },
 });

@@ -2,7 +2,7 @@ const mjmlLib = require('mjml');
 const stampit = require('stampit');
 const fetch = require('node-fetch');
 const handlebars = require('handlebars');
-const helpers = require('handlebars-helpers')({handlebars});
+require('handlebars-helpers')({ handlebars });
 
 /**
  * Fetch the template file from a URL
