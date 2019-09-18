@@ -16,7 +16,7 @@ $('#view-sample').click(function () {
 });
 
 // Handle form submission
-var baseUrl = 'https://wt-972cd1bf439680cd8845b3d13ca8326e-0.sandbox.auth0-extend.com/rss-to-email-webtask';
+var baseUrl = 'https://rss-to-email.karllhughes.now.sh';
 $('form#email-options').submit(function () {
   $('#alert-dialog').hide();
   // Get the form data
