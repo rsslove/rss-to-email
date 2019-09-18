@@ -15,20 +15,20 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "handlebars": "^4.1.1",
+    "handlebars": "^4.2.0",
     "handlebars-helpers": "^0.10.0",
-    "mjml": "^4.3.1",
-    "node-fetch": "^2.3.0",
-    "rss-parser": "^3.7.0",
-    "stampit": "^4.2.0"
+    "mjml": "^4.5.0",
+    "node-fetch": "^2.6.0",
+    "rss-parser": "^3.7.2",
+    "stampit": "^4.3.0"
   },
   "devDependencies": {
-    "coveralls": "^3.0.3",
+    "coveralls": "^3.0.6",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
     "file-exists": "^5.0.1",
-    "jest": "^24.5.0"
+    "jest": "^24.9.0"
   },
   "repository": {
     "type": "git",

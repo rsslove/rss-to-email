@@ -1,0 +1,11 @@
+{
+  "name": "rss-to-email-function",
+  "version": "0.1.0",
+  "main": "index.js",
+  "dependencies": {
+    "rss-to-email": "^0.9.0"
+  },
+  "devDependencies": {
+    "@now/node": "^1.0.0"
+  }
+}

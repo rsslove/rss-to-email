@@ -9,5 +9,5 @@ config.json
 output/*
 !.gitkeep
 coverage/
-webtask/package-lock.json
+package-lock.json
 docs/_site
