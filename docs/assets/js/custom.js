@@ -35,6 +35,7 @@ $('form#email-options').submit(function () {
     data : JSON.stringify(data),
     dataType: 'html',
     contentType : 'application/json',
+    crossDomain: true,
     type : 'POST',
     success: function (response) {
       $('#preview-b1').html(response);
