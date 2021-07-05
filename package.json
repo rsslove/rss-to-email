@@ -1,7 +1,7 @@
 {
   "name": "rss-to-email",
   "description": "Generate HTML email from your RSS feeds",
-  "homepage": "https://github.com/portable-cto/rss-to-email",
+  "homepage": "https://github.com/rsslove/rss-to-email",
   "version": "0.11.0",
   "main": "src/RssToEmail.js",
   "scripts": {
@@ -15,12 +15,12 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "handlebars": "^4.2.0",
+    "handlebars": "^4.7.7",
     "handlebars-helpers": "^0.10.0",
-    "mjml": "^4.5.0",
-    "node-fetch": "^2.6.0",
-    "rss-parser": "^3.7.2",
-    "stampit": "^4.3.0"
+    "mjml": "^4.10.1",
+    "node-fetch": "^2.6.1",
+    "rss-parser": "^3.12.0",
+    "stampit": "^4.3.2"
   },
   "devDependencies": {
     "eslint": "^7.30.0",
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/portable-cto/rss-to-email"
+    "url": "https://github.com/rsslove/rss-to-email"
   },
   "bin": {
     "rss-to-email": "./cli.js"
