@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../icon-variables/variables-direction.scss"
-    ],
-    "names": [],
-    "file": "variables-direction.css"
-}

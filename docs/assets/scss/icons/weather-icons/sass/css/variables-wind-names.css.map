@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../icon-variables/variables-wind-names.scss"
-    ],
-    "names": [],
-    "file": "variables-wind-names.css"
-}
