@@ -2,7 +2,7 @@
   "name": "rss-to-email",
   "description": "Generate HTML email from your RSS feeds",
   "homepage": "https://github.com/rsslove/rss-to-email",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "main": "src/RssToEmail.js",
   "scripts": {
     "build": "webpack",
