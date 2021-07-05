@@ -10,7 +10,7 @@
     "lint": "eslint src/",
     "test": "jest",
     "test:integration": "jest tests/integration",
-    "test:unit": "jest tests/unit --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:unit": "jest tests/unit --coverage",
     "test:watch": "jest --watchAll"
   },
   "license": "Apache-2.0",
@@ -23,7 +23,6 @@
     "stampit": "^4.3.0"
   },
   "devDependencies": {
-    "coveralls": "^3.1.1",
     "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",

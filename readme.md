@@ -2,8 +2,8 @@
 
 Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS feeds.
 
-> Note: This project is pre-version 1.0.0, so breaking changes may occur. Use at your own risk or lock down to a specific version using NPM. 
-
+> Note: This project is pre-version 1.0.0, so breaking changes may occur. Use at your own risk or lock down to a specific version using NPM.
+[![example workflow](https://github.com/rsslove/rss-to-email/actions/workflows/test-and-lint.yml/badge.svg)](/actions)
 [![Travis Build Status](https://travis-ci.org/portable-cto/rss-to-email.png?branch=master)](https://travis-ci.org/portable-cto/rss-to-email)
 [![Coverage Status](https://coveralls.io/repos/github/portable-cto/rss-to-email/badge.svg)](https://coveralls.io/github/portable-cto/rss-to-email)
 [![npm](https://img.shields.io/npm/v/rss-to-email.svg)](https://www.npmjs.com/package/rss-to-email)
