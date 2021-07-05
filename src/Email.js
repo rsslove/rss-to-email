@@ -10,7 +10,7 @@ require('handlebars-helpers')({ handlebars });
  * @return {Promise<string>}
  */
 function getTemplateFile(url) {
-  return fetch(url).then(res => res.text()).then(res => res);
+  return fetch(url).then((res) => res.text()).then((res) => res);
 }
 
 const Email = stampit({
@@ -64,6 +64,5 @@ const Email = stampit({
     },
   },
 });
-
 
 module.exports = Email;

@@ -7,7 +7,7 @@ const stampit = require('stampit');
  * @return {Object}
  */
 function cleanItem(item) {
-  const cleanedItem = Object.assign({}, item);
+  const cleanedItem = { ...item };
   cleanedItem.title = item.title.replace(/\bhttps?:\/\/\S+/gi, '');
 
   return cleanedItem;
@@ -41,7 +41,7 @@ const Feed = stampit({
     async resolve() {
       const feedObject = await this.parser.parseURL(this.config.url);
 
-      this.items = feedObject.items.map(item => cleanItem(item));
+      this.items = feedObject.items.map((item) => cleanItem(item));
       this.applyFilters();
       this.title = this.config.title || feedObject.title;
       this.description = this.config.description || feedObject.description;
@@ -59,7 +59,7 @@ const Feed = stampit({
         // Filter by published since
         if (this.config.publishedSince) {
           this.items = this.items
-            .filter(item => new Date(item.isoDate) >= new Date(this.config.publishedSince));
+            .filter((item) => new Date(item.isoDate) >= new Date(this.config.publishedSince));
         }
 
         // Apply limit
