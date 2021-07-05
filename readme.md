@@ -4,7 +4,7 @@ Generate HTML emails and [mjml](https://mjml.io/) templates from one or more RSS
 
 > Note: This project is pre-version 1.0.0, so breaking changes may occur. Use at your own risk or lock down to a specific version using NPM.
 
-[![example workflow](https://github.com/rsslove/rss-to-email/actions/workflows/test-and-lint.yml/badge.svg)](https://github.com/rsslove/rss-to-email/actions)
+[![GitHub workflow](https://github.com/rsslove/rss-to-email/actions/workflows/test-and-lint.yml/badge.svg)](https://github.com/rsslove/rss-to-email/actions)
 [![codecov](https://codecov.io/gh/rsslove/rss-to-email/branch/master/graph/badge.svg?token=I2752VL3TQ)](https://codecov.io/gh/rsslove/rss-to-email)
 [![npm](https://img.shields.io/npm/v/rss-to-email.svg)](https://www.npmjs.com/package/rss-to-email)
 [![GitHub stars](https://img.shields.io/github/stars/portable-cto/rss-to-email.svg?style=social&label=Stars)](https://github.com/portable-cto/rss-to-email)
